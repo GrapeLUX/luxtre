@@ -15,9 +15,13 @@ export default class UtilityStakingChartPage extends Component<Props> {
   render() {
     const { intl } = this.context;
     const actions = this.props.actions;
+    const { wallets} = this.props.stores.lux;
+    const { getStakingData } = wallets;
 
     return (
-      <StakingChart/>
+      <StakingChart
+        stakingsData = {getStakingData}
+      />
     );
   }
 

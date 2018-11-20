@@ -180,7 +180,6 @@ export const LUX_API_PORT = 9888;
 export const LUX_API_USER = 'rpcuser';
 export let LUX_API_PWD = 'rpcpwd';
 export const LUX_STAKE_FETCH_INTERVAL = 600;
-export const LUX_STAKE_RECORD_DEEP = 7 * 24 * 3600;
 
 // LUX specific Request / Response params
 

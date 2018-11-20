@@ -3,14 +3,23 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import styles from './StakingChart.scss';
 
+type Props = {
+    stakingsData: Array<StakingData>
+};
+
 @observer
-export default class StakingChart extends Component<State> {
+export default class StakingChart extends Component<Props> {
   
   _graphLoading = true;
   _isMounted = false;
 
   componentDidMount() {
     this._isMounted = true;
+    const {stakingsData} = this.props;
+    stakingsData.then(function(result){
+        //console.log(result);
+        //renderGraph(stakingData);
+    })
   }
 
   componentWillUnmount() {
@@ -121,11 +130,10 @@ export default class StakingChart extends Component<State> {
   }
 
   render() {
-
     return (
       <div className={styles.component}>
-        <div className={styles.categoryTitle}> Staking Chart </div>
-        <div className={cx(styles['chart'])} id='staking-graph-container'></div>
+        <div className={styles.categoryTitle}> Staking Weight </div>
+        <div className='chart' id='staking-graph-container'></div>
       </div>
     );
   }
