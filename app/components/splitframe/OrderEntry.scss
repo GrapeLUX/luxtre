@@ -36,3 +36,139 @@
       display: flex;
       color: #39414d;
   }
+  .PopOver_PopOverWrapper {
+      position: relative;
+      top: -0.08em;
+  }
+  .Clickable {
+      display: block;
+      width: 100%;
+      transition-property: all;
+      transition-duration: 0.1s;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+      outline-color: initial;
+      outline-style: none;
+      outline-width: initial;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      color: inherit;
+      font: inherit;
+      position: relative;
+      padding: 0px;
+      text-align: center;
+      background: transparent;
+
+
+  }
+  .BuySellToggle_Outer {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: #d3d9e4;
+      padding: 1rem;
+  }
+  .BuySellToggle_Background {
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0px;
+      height: 2.22rem;
+      border-radius: 1.11rem;
+      background: #d3d9e4;
+      cursor: pointer;
+      padding: 0px;
+  }
+  .BuySellToggle_Slider {
+      position: relative;
+      height: 100%;
+      font-size: 1rem;
+      font-weight: 300;
+      font-family: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+      color: white;
+  }
+  .Toggle_Buy::after {
+    content: 'Sell';
+    background: #e65668;
+    transform: translateX(0);
+    
+    transition-property: transform, opacity;
+    transition-duration: 0.3s, 0.1s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0.1s;
+
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 1.11rem;
+    height: 100%;
+    width: 75%;
+    right: auto;
+    opacity: 0
+  }
+  .Toggle_Buy::before {
+    content: 'Buy';
+    background: #4ed27c;
+    transform: translateX(0);
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+    
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 1.11rem;
+    height: 100%;
+    width: 75%;
+    opacity: 1;
+  }
+
+  .Toggle_Sell::after {
+    content: 'Sell';
+    background: #e65668;
+    transform: translateX(33.3%);
+    
+    transition-property: transform, opacity;
+    transition-duration: 0.3s, 0.1s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0.1s;
+
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 1.11rem;
+    height: 100%;
+    width: 75%;
+    right: auto;
+    opacity: 1;
+  }
+  .Toggle_Sell::before {
+    content: 'Buy';
+    background: #4ed27c;
+    transform: translateX(33.3%);
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+    
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 1.11rem;
+    height: 100%;
+    width: 75%;
+    opacity: 0;
+  }
