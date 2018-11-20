@@ -172,3 +172,28 @@
     width: 75%;
     opacity: 0;
   }
+  .Bottom_Border > * {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: #d3d9e4;
+  }
+  .Form_Row1 {
+      position: relative;
+      width: 100%;
+
+      > button {
+          width: 100%;
+      }
+  }
+  .Form_Row2 {
+      display: flex;
+      -webkit-box-align: baseline;
+      align-items: center;
+      font-size: 1rem;
+      padding-top: 0.65rem;
+      padding-bottom: 0.65rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      height: 3rem;
+
+  }

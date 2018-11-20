@@ -58,9 +58,28 @@ export default class Chart extends Component<Props> {
                         </div>
                     </button>
                 </div>
-                <div>
-                    Signin Signup section 
-                </div>
+                <form>
+                    <div className={styles.Bottom_Border}>
+                        <div className={styles.Form_Row1}>
+                            Type
+                        </div>
+                        <label className={styles.Form_Row2}>
+                            Price
+                        </label>
+                        <label className={styles.Form_Row2}>
+                            Size
+                        </label>
+                        <label className={styles.Form_Row2}>
+                            Advanced
+                        </label>
+                        <div className={styles.Form_Row1}>
+                            Time in force
+                        </div>
+                        <label className={styles.Form_Row2}>
+                            Total
+                        </label>
+                    </div>
+                </form>
             </div>   
         );
     }
