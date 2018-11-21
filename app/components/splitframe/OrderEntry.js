@@ -12,7 +12,8 @@ export default class Chart extends Component<Props> {
         super();
 
         this.state = {
-            buy: true
+            buy: true,
+            advanced: false,
         }
     }
     
@@ -20,8 +21,15 @@ export default class Chart extends Component<Props> {
         this.setState({buy: !this.state.buy})
     }
 
+    onAdvancedHandler() {
+        this.setState({advanced: !this.state.advanced})
+    }
+
+
     render() {
         let buysell_class = this.state.buy ? "Toggle_Buy" : "Toggle_Sell";
+        let advanced_class = this.state.advanced ? "Toggle_Circle_On" : "Toggle_Circle_Off";
+        let advancedBackgroud_class = this.state.advanced ? "Toggle_Container_Background_On" : "Toggle_Container_Background_Off";
         return (
             <div className={styles.component}>
             
@@ -81,10 +89,15 @@ export default class Chart extends Component<Props> {
                             <div className={styles.Form_ValueItem}>...</div>
                             <div className={styles.Form_TypeItem2}>BTC</div>
                         </label>
-                        <label className={styles.Form_Row2}>
-                            Advanced
+                        <label className={styles.Form_Row2} onClick={this.onAdvancedHandler.bind(this)}>
+                            <div className={styles.Toggle_Container + ' ' + styles[advancedBackgroud_class]}>
+                                <div className={styles[advanced_class]}>
+                                </div>
+                            </div>
+                            <div className={styles.Form_CategoryItem}>Advanced</div>
                         </label>
-                        <div className={styles.Form_Row1}>
+                        {
+                        this.state.advanced && <div className={styles.Form_Row1}>
                             <button type="button" className={styles.Form_Button}>
                                 <span className={styles.Form_Span}>
                                     <div className={styles.Form_CategoryItem}>Time in force</div>
@@ -95,11 +108,18 @@ export default class Chart extends Component<Props> {
                                 </span>
                             </button>
                         </div>
+                        }
                         <label className={styles.Form_Row2}>
-                            <div className={styles.Form_CategoryItem}>Price</div>
+                            <div className={styles.Form_CategoryItem}>Total</div>
                             <div className={styles.Form_ValueItem}>...</div>
                             <div className={styles.Form_TypeItem2}>AUD</div>
                         </label>
+                    </div>
+                    <div className={styles.Signinup_Container}>
+                        <a className={styles.CreateAccount}>Create an account</a>
+                        <p className={styles.Sign_In}>
+                            <a>Sing In</a>
+                        </p>
                     </div>
                 </form>
             </div>   

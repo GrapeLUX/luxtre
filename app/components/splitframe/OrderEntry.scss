@@ -259,3 +259,88 @@
       flex-shrink: 0;
       flex-basis: 3.5rem;
   }
+  .Toggle_Container {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      border-radius: 1rem;
+      cursor: pointer;
+      min-height: 1.2rem;
+      max-height: 1.2rem;
+      min-width: 36px;
+      user-select: none;
+      transition-property: all;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+      margin-right: 0.65rem;
+
+  }
+  
+  .Toggle_Container_Background_Off {
+      background: #8592a6;
+  }
+
+  .Toggle_Container_Background_On {
+      background: #6878ff;
+}
+
+  .Toggle_Circle_Off {
+      background: #ffffff;
+      border-radius: 0.5rem;
+      height: 15px;
+      width: 15px;
+      transition-property: all;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+      
+      transform: translateX(2px);
+  }
+
+  .Toggle_Circle_On {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    height: 15px;
+    width: 15px;
+    transition-property: all;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    
+    transform: translateX(18px);
+}
+
+.Signinup_Container {
+    padding: 1rem;
+    margin-bottom: 4rem;
+}
+.CreateAccount {
+    display: inline-block;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.35rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.65rem 1.3rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease;
+    color: white;
+    background-color: #6878ff;
+    width: 100%;
+}
+.Sign_In {
+    padding-top: 1rem;
+    color: #8592a6;
+    text-align: center;
+    font-size: 1rem;
+
+    > a {
+        display: inline-block;
+        color: inherit;
+    }
+}
