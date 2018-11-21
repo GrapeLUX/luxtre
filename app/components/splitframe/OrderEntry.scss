@@ -197,3 +197,65 @@
       height: 3rem;
 
   }
+  .Form_Button {
+      display: block;
+      transition-property: all;
+      transition-duration: 0.1s;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+
+      outline: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      color: inherit;
+      font: inherit;
+      position: relative;
+      padding: 0;
+      text-align: center;
+      background: transparent;
+  }
+  .Form_Span {
+      font-size: 1rem;
+      padding-top: 0.65rem;
+      padding-bottom: 0.65rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      height: 3rem;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+  }
+  .Form_CategoryItem {
+      line-height: 1.65rem;
+      color: #8592a6;
+      text-align: left;
+      white-space: nowrap;
+      margin-right: 1rem;
+      
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 7.5rem;
+  }
+  .Form_ValueItem {
+      line-height: 1.65rem;
+      color: #39414d;
+      margin-left: auto;
+  }
+  .Form_TypeItem {
+      display: flex;
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+      margin-left: 1rem;
+      width: 3.5rem;
+  }
+  .Form_TypeItem2 {
+      margin-left: 1rem;
+      line-height: 1.65rem;
+      text-align: right;
+      color: #8592a6;
+      font-size: 1rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 3.5rem;
+  }

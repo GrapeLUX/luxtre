@@ -61,22 +61,44 @@ export default class Chart extends Component<Props> {
                 <form>
                     <div className={styles.Bottom_Border}>
                         <div className={styles.Form_Row1}>
-                            Type
+                            <button type="button" className={styles.Form_Button}>
+                                <span className={styles.Form_Span}>
+                                    <div className={styles.Form_CategoryItem}>Type</div>
+                                    <div className={styles.Form_ValueItem}>Limit</div>
+                                    <div className={styles.Form_TypeItem}>
+                                        <img src={require('../../assets/images/info-icon.svg')}/>
+                                    </div>
+                                </span>
+                            </button>
                         </div>
                         <label className={styles.Form_Row2}>
-                            Price
+                            <div className={styles.Form_CategoryItem}>Price</div>
+                            <div className={styles.Form_ValueItem}>...</div>
+                            <div className={styles.Form_TypeItem2}>AUD</div>
                         </label>
                         <label className={styles.Form_Row2}>
-                            Size
+                            <div className={styles.Form_CategoryItem}>Size</div>
+                            <div className={styles.Form_ValueItem}>...</div>
+                            <div className={styles.Form_TypeItem2}>BTC</div>
                         </label>
                         <label className={styles.Form_Row2}>
                             Advanced
                         </label>
                         <div className={styles.Form_Row1}>
-                            Time in force
+                            <button type="button" className={styles.Form_Button}>
+                                <span className={styles.Form_Span}>
+                                    <div className={styles.Form_CategoryItem}>Time in force</div>
+                                    <div className={styles.Form_ValueItem}>Good til cancel</div>
+                                    <div className={styles.Form_TypeItem}>
+                                        <img src={require('../../assets/images/info-icon.svg')}/>
+                                    </div>
+                                </span>
+                            </button>
                         </div>
                         <label className={styles.Form_Row2}>
-                            Total
+                            <div className={styles.Form_CategoryItem}>Price</div>
+                            <div className={styles.Form_ValueItem}>...</div>
+                            <div className={styles.Form_TypeItem2}>AUD</div>
                         </label>
                     </div>
                 </form>
