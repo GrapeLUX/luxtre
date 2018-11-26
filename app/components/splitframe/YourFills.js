@@ -6,12 +6,12 @@ type Props = {
   };  
 
 @observer
-export default class TimeSales extends Component<Props> {
+export default class YourFills extends Component<Props> {
 
     render() {
         return (
             <div>
-                Here is Time and Sales Page
+                Here is Your Fills Page
             </div>   
         );
     }

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import styles from './OrderEntry.scss'
+import styles from './OrderEntry.scss';
+import PopOver from './PopOver';
 
 type Props = {
     coinPrice: number,
   };
 
 @observer
-export default class Chart extends Component<Props> {
+export default class OrderEntry extends Component<Props> {
     constructor(){
         super();
 
@@ -74,7 +75,7 @@ export default class Chart extends Component<Props> {
                                     <div className={styles.Form_CategoryItem}>Type</div>
                                     <div className={styles.Form_ValueItem}>Limit</div>
                                     <div className={styles.Form_TypeItem}>
-                                        <img src={require('../../assets/images/info-icon.svg')}/>
+                                    <PopOver></PopOver>
                                     </div>
                                 </span>
                             </button>
@@ -103,7 +104,7 @@ export default class Chart extends Component<Props> {
                                     <div className={styles.Form_CategoryItem}>Time in force</div>
                                     <div className={styles.Form_ValueItem}>Good til cancel</div>
                                     <div className={styles.Form_TypeItem}>
-                                        <img src={require('../../assets/images/info-icon.svg')}/>
+                                        <PopOver></PopOver>
                                     </div>
                                 </span>
                             </button>
