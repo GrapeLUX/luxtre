@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import consoleIcon from '../../assets/images/top-bar/theme-dark.png';
+import munuIcon from '../../assets/images/top-bar/theme-dark.png';
 import styles from './ThemeMenuIcon.scss';
 
 const messages = defineMessages({
-  consoleWindow: {
-    id: 'luxcoin.theme.setting',
+  themeSettingIcon: {
+    id: 'luxcoin.theme.setting.icon',
     defaultMessage: '!!!Theme Style',
     description: 'Label for the theme style on Theme Setting icon.'
   },
@@ -30,6 +30,12 @@ export default class ThemeMenuIcon extends Component<Props> {
     ]);
     return (
       <div className={componentClasses}>
+        <button>
+          <img className={styles.icon} src={munuIcon} role="presentation" />
+          <div className={styles.info}>
+            {intl.formatMessage(messages.themeSettingIcon)}
+          </div>
+        </button>
       </div>
     );
   }
