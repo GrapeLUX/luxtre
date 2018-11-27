@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import TopBar from '../components/layout/TopBar';
+import ThemeMenuIcon from '../components/widgets/ThemeMenuIcon';
 import ConsoleWindowIcon from '../components/widgets/ConsoleWindowIcon';
 import NodeSyncStatusIcon from '../components/widgets/NodeSyncStatusIcon';
 import WalletLockStatusIcon from '../components/widgets/WalletLockStatusIcon';
@@ -60,6 +61,12 @@ export default class TopBarContainer extends Component<Props> {
         }
         {isShowingLuxtre ?
           <ConsoleWindowIcon
+            openDialogAction={actions.dialogs.open.trigger}
+          />
+          :null
+        }
+        {isShowingLuxtre ?
+          <ThemeMenuIcon
             openDialogAction={actions.dialogs.open.trigger}
           />
           :null
