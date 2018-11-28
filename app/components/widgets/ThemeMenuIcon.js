@@ -36,6 +36,11 @@ export default class ThemeMenuIcon extends Component<Props> {
             {intl.formatMessage(messages.themeSettingIcon)}
           </div>
         </button>
+        <div className={styles.menu}>
+          <div className={styles.menuItem}>default</div>
+          <div className={styles.menuItem}>dark-blue</div>
+          <div className={styles.menuItem}>light-blue</div>
+        </div>
       </div>
     );
   }
