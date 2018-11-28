@@ -88,7 +88,7 @@ class CandlestickChart extends React.Component {
 		const xExtents = [start, end];
 
 		return (
-			<ChartCanvas height={600}
+			<ChartCanvas height={750}
 				width={width}
 				ratio={ratio}
 				margin={{ left: 70, right: 70, top: 20, bottom: 30 }}
@@ -112,35 +112,14 @@ class CandlestickChart extends React.Component {
 						orient="right"
 						displayFormat={format(".2f")} />
 
-					<CandlestickSeries />
-					<LineSeries yAccessor={ema26.accessor()} stroke={ema26.stroke()}/>
-					<LineSeries yAccessor={ema12.accessor()} stroke={ema12.stroke()}/>
-
-					<CurrentCoordinate yAccessor={ema26.accessor()} fill={ema26.stroke()} />
-					<CurrentCoordinate yAccessor={ema12.accessor()} fill={ema12.stroke()} />
+					<CandlestickSeries stroke={d => d.close > d.open ? "#4ED27C" : "#E65668"} fill={d => d.close > d.open ? "#FFFFFF" : "#E65668"} wickStroke={d => d.close > d.open ? "#4ED27C" : "#E65668"}/>
+					
 
 					<EdgeIndicator itemType="last" orient="right" edgeAt="right"
-						yAccessor={d => d.close} fill={d => d.close > d.open ? "#6BA583" : "#FF0000"}/>
+						yAccessor={d => d.close} fill={d => d.close > d.open ? "#4ED27C" : "#E65668"}/>
 
 					<OHLCTooltip origin={[-40, 0]}/>
-					<MovingAverageTooltip
-						onClick={e => console.log(e)}
-						origin={[-38, 15]}
-						options={[
-							{
-								yAccessor: ema26.accessor(),
-								type: ema26.type(),
-								stroke: ema26.stroke(),
-								windowSize: ema26.options().windowSize,
-							},
-							{
-								yAccessor: ema12.accessor(),
-								type: ema12.type(),
-								stroke: ema12.stroke(),
-								windowSize: ema12.options().windowSize,
-							},
-						]}
-					/>
+					
 					<ClickCallback
 						onMouseMove={ (moreProps, e) => { console.log("onMouseMove", moreProps, e); } }
 						onMouseDown={ (moreProps, e) => { console.log("onMouseDown", moreProps, e); } }
@@ -156,41 +135,16 @@ class CandlestickChart extends React.Component {
 					yExtents={[d => d.volume, smaVolume50.accessor()]}
 					origin={(w, h) => [0, h - 300]}
 				>
-					<YAxis axisAt="left" orient="left" ticks={5} tickFormat={format(".2s")}/>
 
 					<MouseCoordinateY
 						at="left"
 						orient="left"
 						displayFormat={format(".4s")} />
 
-					<BarSeries yAccessor={d => d.volume} fill={d => d.close > d.open ? "#6BA583" : "#FF0000"} />
-					<AreaSeries yAccessor={smaVolume50.accessor()} stroke={smaVolume50.stroke()} fill={smaVolume50.fill()}/>
+					<BarSeries yAccessor={d => d.volume} fill={d => d.close > d.open ? "#4ED27C" : "#E65668"}/>
+					<XAxis axisAt="bottom" orient="bottom" />
 				</Chart>
-				<Chart id={3} height={150}
-					yExtents={macdCalculator.accessor()}
-					origin={(w, h) => [0, h - 150]} padding={{ top: 10, bottom: 10 }}
-				>
-					<XAxis axisAt="bottom" orient="bottom"/>
-					<YAxis axisAt="right" orient="right" ticks={2} />
 
-					<MouseCoordinateX
-						at="bottom"
-						orient="bottom"
-						displayFormat={timeFormat("%Y-%m-%d")} />
-					<MouseCoordinateY
-						at="right"
-						orient="right"
-						displayFormat={format(".2f")} />
-
-					<MACDSeries yAccessor={d => d.macd}
-						{...macdAppearance} />
-					<MACDTooltip
-						origin={[-38, 15]}
-						yAccessor={d => d.macd}
-						options={macdCalculator.options()}
-						appearance={macdAppearance}
-					/>
-				</Chart>
 				<CrossHairCursor />
 			</ChartCanvas>
 		);
