@@ -124,9 +124,9 @@ export default {
   '--theme-nav-item-text-color-active': '#ffffff',
   '--theme-nav-item-text-gradient-1': '#243d5f',
   '--theme-nav-item-text-gradient-2': '#83a5c1',
-  
+
   '--theme-nav-sideitem-background-color': '#022140',
-  '--theme-nav-sideitem-background-color-hover': '#32a4bb',
+  '--theme-nav-sideitem-background-color-hover': '#0c2f52',
   '--theme-nav-sideitem-background-color-active': '#40c2dc',
   '--theme-nav-sideitem-text-color': '#dfdfdf',
   '--theme-nav-sideitem-text-color-active': '#ffffff',

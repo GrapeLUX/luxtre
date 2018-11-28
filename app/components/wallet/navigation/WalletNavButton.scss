@@ -27,7 +27,7 @@
   display: block;
   overflow: visible;
   //letter-spacing: 1px;
-  color: var(--theme-nav-item-text-color);
+  color: var(--theme-nav-sideitem-text-color);
 }
 
 .icon {
@@ -58,12 +58,12 @@
 
 .normal {
   .container {
-    color: var(--theme-nav-item-text-color);
+    color: var(--theme-nav-sideitem-text-color);
   }
 
   &:hover {
     .container {
-      background-color: #0c2149;
+      background-color: var(--theme-nav-sideitem-background-color-hover);
     }
     cursor: pointer;
   }
@@ -71,9 +71,9 @@
 
 .active {
   .container {
-    //background: linear-gradient(90deg, var(--theme-nav-item-text-gradient-1), var(--theme-nav-item-text-gradient-2));
-    background-color: var(--theme-nav-item-background-color-hover);
-    color: var(--theme-nav-item-text-color-active);
+    //background: linear-gradient(90deg, var(--theme-nav-sideitem-text-gradient-1), var(--theme-nav-sideitem-text-gradient-2));
+    background-color: var(--theme-nav-sideitem-background-color-active);
+    color: var(--theme-nav-sideitem-text-color-active);
   }
 
   &:hover {

@@ -128,8 +128,8 @@ export default {
   '--theme-nav-item-text-gradient-2': '#83a5c1',
   
   '--theme-nav-sideitem-background-color': '#061532',
-  '--theme-nav-sideitem-background-color-hover': '#32a4bb',
-  '--theme-nav-sideitem-background-color-active': '#40c2dc',
+  '--theme-nav-sideitem-background-color-hover': '#0c2149',
+  '--theme-nav-sideitem-background-color-active': '#32a4bb',
   '--theme-nav-sideitem-text-color': '#ddd',
   '--theme-nav-sideitem-text-color-active': '#050b2d',
   '--theme-nav-sideitem-text-gradient-1': '#243d5f',

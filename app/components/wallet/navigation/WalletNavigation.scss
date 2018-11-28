@@ -7,7 +7,7 @@
 .navItem {
   height: 100%;
   width: 100%; // Update when adding new nav items!
-  background-color: var(--theme-nav-item-background-color);
+  background-color: var(--theme-nav-sideitem-background-color);
 }
 .balance {
   color: navajowhite;
@@ -16,7 +16,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   width: 100%; // Update when adding new nav items!
-  background-color: var(--theme-nav-item-background-color);
+  background-color: var(--theme-nav-sideitem-background-color);
   border-radius: 8px;
 }
 .social {
