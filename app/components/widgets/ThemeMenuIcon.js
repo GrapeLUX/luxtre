@@ -16,11 +16,23 @@ type Props = {
   openDialogAction: Function,
 };
 
-export default class ThemeMenuIcon extends Component<Props> {
+type State = {
+  isShowThemeMenu: boolean,
+}
+
+export default class ThemeMenuIcon extends Component<Props, State> {
+
+  state = {
+    isShowThemeMenu: false
+  };
 
   static contextTypes = {
     intl: intlShape.isRequired
   };
+
+  onOpenThemeMenu() {
+    this.state.isShowThemeMenu = !this.state.isShowThemeMenu;
+  }
 
   render() {
     const { openDialogAction } = this.props;
@@ -28,15 +40,19 @@ export default class ThemeMenuIcon extends Component<Props> {
     const componentClasses = classNames([
       styles.component,
     ]);
+    const themeMenuClasses = classNames([
+      styles.menu,
+      this.state.isShowThemeMenu ? null : styles.hideMenu
+    ]);
     return (
       <div className={componentClasses}>
-        <button>
+        <button onClick={ this.onOpenThemeMenu.bind(this)}>
           <img className={styles.icon} src={munuIcon} role="presentation" />
           <div className={styles.info}>
             {intl.formatMessage(messages.themeSettingIcon)}
           </div>
         </button>
-        <div className={styles.menu}>
+        <div className={themeMenuClasses}>
           <div className={styles.menuItem}>default</div>
           <div className={styles.menuItem}>dark-blue</div>
           <div className={styles.menuItem}>light-blue</div>
