@@ -51,11 +51,18 @@
 }
 
 .menu {
-  width: 100px;
-  border: 1px solid gray;
+  margin-top: 10px;
+  width: 120px;
+  //padding: 10px 10px;
   text-align: left;
+  border: var(--theme-dropdown-menu-item-border);
+  background-color: var(--theme-dropdown-menu-item-background-color);
 }
 
 .menuItem {
-  padding: 5px 10px;
+  padding: 10px 12px;
+  background-color: var(--theme-dropdown-menu-item-background-color);
+  &:hover {
+    background-color: var(--theme-dropdown-menu-item-background-color-hover);
+  }
 }
