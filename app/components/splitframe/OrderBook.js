@@ -17,6 +17,24 @@ export default class OrderBook extends Component<Props> {
                     <div className={styles.Header_Size}>Size</div>
                     <div className={styles.Header_Price}>Price</div>
                 </div>
+
+                <div className={styles.TableContent}>
+                    <div className={styles.Table_Order_Flash}>
+                        <div className={styles.Table_Row}>
+                            <div className={styles.Table_Cell}>
+                                <div className={styles.ProportionBar_Container}>
+                                    <div className={styles.ProportionBar_Bar}></div>
+                                </div>
+                            </div>
+                            <div className={styles.Table_Cell}>
+                                <span title="0.0100">0.01</span>
+                            </div>
+                            <div className={styles.Table_Cell}>
+                                <span title="5839.0000">5839</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
             </div>   
         );

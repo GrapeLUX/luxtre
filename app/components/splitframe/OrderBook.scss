@@ -1,5 +1,6 @@
 .component {
     height: 100%;
+    width: 100%;
     background: #f4f6f9;
     padding-bottom: 0.5rem;
     min-width: 28rem;
@@ -31,7 +32,7 @@
   .Header_Proportion {
       flex-basis: 10rem;
       text-align: center;
-      max-width: 20rem;
+      max-width: 15rem;
       -webkit-box-flex: 1;
       flex-grow: 1;
       font-size: 1rem;
@@ -58,4 +59,79 @@
     flex-grow: 0;
     font-size: 1rem;
     color: #39414d;
+}
+
+.TableContent {
+    height: calc(100% - 36px);
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.Table_Order_Flash {
+    font-size: 1rem;
+    position: relative;
+    z-index: 0;
+}
+
+.Table_Row {
+    height: 2rem;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.15s;
+
+    :nth-child(1){
+        flex-basis: 10rem;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        max-width: 15rem;
+    }
+    :nth-child(2){
+        margin-left: 1rem;
+        flex-basis: 6rem;;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        max-width: 6rem;
+    }
+    :nth-child(3){
+        margin-left: 1rem;
+        flex-basis: 7rem;;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        -webkit-box-flex: 0;
+        flex-grow: 0;
+        max-width: 7rem;
+    }
+}
+.Table_Cell {
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+}
+
+.ProportionBar_Container {
+    width: 100%;
+    padding-right: 0.4rem;
+}
+
+.ProportionBar_Bar {
+    width: 10%;
+    box-sizing: content-box;
+    padding:0 0.3rem;
+    border-radius: 0.3rem;
+    background: #e65668;
+    height: 0.6rem;
+    transition: width 0.3s 0.1s;
 }
