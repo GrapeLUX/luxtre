@@ -128,6 +128,14 @@ export default {
   '--theme-nav-item-text-gradient-1': '#243d5f',
   '--theme-nav-item-text-gradient-2': '#83a5c1',
 
+  '--theme-nav-sideitem-background-color': '#1c2e47',
+  '--theme-nav-sideitem-background-color-hover': 'rgba(250, 251, 252, 0.1)',
+  '--theme-nav-sideitem-background-color-active': '#fafbfc',
+  '--theme-nav-sideitem-text-color': 'rgba(250,251,252, 0.6)',
+  '--theme-nav-sideitem-text-color-active': '#1d2e47',
+  '--theme-nav-sideitem-text-gradient-1': '#243d5f',
+  '--theme-nav-sideitem-text-gradient-2': '#83a5c1',
+
   '--theme-node-update-background-color': '#ebeff2',
   '--theme-node-update-title-color': '#5e6066',
   '--theme-node-update-message-color': '#5e6066',

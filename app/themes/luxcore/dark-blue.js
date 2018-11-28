@@ -120,10 +120,18 @@ export default {
   '--theme-nav-item-background-color': '#022140',
   '--theme-nav-item-background-color-hover': '#32a4bb',
   '--theme-nav-item-background-color-active': '#40c2dc',
-  '--theme-nav-item-text-color': '#9ba6b3',
+  '--theme-nav-item-text-color': '#dfdfdf',
   '--theme-nav-item-text-color-active': '#ffffff',
   '--theme-nav-item-text-gradient-1': '#243d5f',
   '--theme-nav-item-text-gradient-2': '#83a5c1',
+  
+  '--theme-nav-sideitem-background-color': '#022140',
+  '--theme-nav-sideitem-background-color-hover': '#32a4bb',
+  '--theme-nav-sideitem-background-color-active': '#40c2dc',
+  '--theme-nav-sideitem-text-color': '#dfdfdf',
+  '--theme-nav-sideitem-text-color-active': '#ffffff',
+  '--theme-nav-sideitem-text-gradient-1': '#243d5f',
+  '--theme-nav-sideitem-text-gradient-2': '#83a5c1',
 
   '--theme-node-update-background-color': '#020f1c',
   '--theme-node-update-title-color': '#5e6066',
@@ -217,7 +225,7 @@ export default {
   '--theme-uploader-text-color': '#ffffff',
   '--theme-uploader-border-color': 'rgba(102, 122, 138, 0.3)',
 
-  '--theme-icon-nav-color': '#9ba6b3',
+  '--theme-icon-nav-color': '#efefef',
   '--theme-icon-nav-color-active': '#ffffff',
   '--theme-icon-sidebar-color': '#fafbfc',
   '--theme-icon-toggle-menu-color': '#fafbfc',
