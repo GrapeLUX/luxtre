@@ -31,11 +31,12 @@ export default class ThemeMenuIcon extends Component<Props, State> {
   };
 
   onOpenThemeMenu() {
-    this.state.isShowThemeMenu = !this.state.isShowThemeMenu;
+    this.setState({isShowThemeMenu: !this.state.isShowThemeMenu});
   }
 
   render() {
     const { openDialogAction } = this.props;
+    const { isShowThemeMenu } = this.state;
     const { intl } = this.context;
     const componentClasses = classNames([
       styles.component,
@@ -46,11 +47,15 @@ export default class ThemeMenuIcon extends Component<Props, State> {
     ]);
     return (
       <div className={componentClasses}>
-        <button onClick={ this.onOpenThemeMenu.bind(this)}>
+        <button onClick={e => this.setState({ isShowThemeMenu: !isShowThemeMenu })}>
           <img className={styles.icon} src={munuIcon} role="presentation" />
-          <div className={styles.info}>
-            {intl.formatMessage(messages.themeSettingIcon)}
-          </div>
+          { isShowThemeMenu ? (
+            null
+          ) : (
+            <div className={styles.info}>
+              {intl.formatMessage(messages.themeSettingIcon)}
+            </div>
+          )}
         </button>
         <div className={themeMenuClasses}>
           <div className={styles.menuItem}>default</div>
