@@ -1,0 +1,86 @@
+.component {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.HeaderContainer {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+
+    font-size: 1rem;
+    font-weight: 300;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom: 1px solid #d3d9e4;
+    background: #f4f6f9;
+    color: #8592a6;
+    min-height: 2.7rem;
+    height: 2.7rem;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.Chart_Interval {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    line-height: 1.5rem;
+    width: 32px;
+    height: 21px;
+    cursor: pointer;
+    background-color: #f4f6f9;
+    color: #39414d;
+}
+
+.PopOver_PopOverWrapper {
+    position: relative;
+}
+
+.Clickable {
+    display: block;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    outline-color: initial;
+    outline-style: none;
+    outline-width: initial;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    color: inherit;
+    font: inherit;
+    position: relative;
+    padding: 0px;
+    text-align: center;
+    background: transparent;
+
+}
+
+.Chart_PopOverLabel {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    min-width: 10rem;
+}
+
+.Chart_ChartType {
+    line-height: 1.5rem;
+    font-size: 1em;
+    color: #39414d;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 1rem;
+}
