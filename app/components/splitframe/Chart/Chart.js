@@ -29,6 +29,14 @@ import { fitWidth } from "react-stockcharts/lib/helper";
 import { ClickCallback } from "react-stockcharts/lib/interactive";
 import { last } from "react-stockcharts/lib/utils";
 
+import { createVerticalLinearGradient, hexToRGBA } from "react-stockcharts/lib/utils";
+
+const canvasGradient = createVerticalLinearGradient([
+	{ stop: 0, color: hexToRGBA("#b5d0ff", 0.2) },
+	{ stop: 0.7, color: hexToRGBA("#6fa4fc", 0.4) },
+	{ stop: 1, color: hexToRGBA("#4286f4", 0.8) },
+]);
+
 const macdAppearance = {
 	stroke: {
 		macd: "#FF0000",
@@ -112,8 +120,12 @@ class CandlestickChart extends React.Component {
 						orient="right"
 						displayFormat={format(".2f")} />
 
-					<CandlestickSeries stroke={d => d.close > d.open ? "#4ED27C" : "#E65668"} fill={d => d.close > d.open ? "#FFFFFF" : "#E65668"} wickStroke={d => d.close > d.open ? "#4ED27C" : "#E65668"}/>
-					
+					{/* <CandlestickSeries stroke={d => d.close > d.open ? "#4ED27C" : "#E65668"} fill={d => d.close > d.open ? "#FFFFFF" : "#E65668"} wickStroke={d => d.close > d.open ? "#4ED27C" : "#E65668"}/> */}
+					<AreaSeries 
+						yAccessor={d => d.close} 
+						fill="url(#MyGradient)"
+						canvasGradient={canvasGradient}
+						/>
 
 					<EdgeIndicator itemType="last" orient="right" edgeAt="right"
 						yAccessor={d => d.close} fill={d => d.close > d.open ? "#4ED27C" : "#E65668"}/>
