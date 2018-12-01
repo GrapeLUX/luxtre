@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import styles from './StakingChart.scss';
 
+import Highcharts from 'highcharts';
+import Exporting from 'highcharts/modules/exporting';
+Exporting(Highcharts);
+
 type Props = {
     stakingsData: Array<StakingData>
 };
@@ -16,9 +20,17 @@ export default class StakingChart extends Component<Props> {
   componentDidMount() {
     this._isMounted = true;
     const {stakingsData} = this.props;
+    var ctx = this;
     stakingsData.then(function(result){
-        //console.log(result);
-        //renderGraph(stakingData);
+        var stakingsWeight = new Array();
+
+	    result.forEach(function(weight) {
+	        var stakingWeight;
+	        stakingWeight = [weight.time, weight.netstakingweight];
+	        stakingsWeight.push(stakingWeight);
+        });
+        
+        ctx.renderGraph(stakingsWeight);
     })
   }
 
@@ -26,9 +38,7 @@ export default class StakingChart extends Component<Props> {
     this._isMounted = false;
   }
 
-  renderGraph(stakingData){
-
-    var ctx = this;
+  renderGraph(stakingsWeight){
 
     Highcharts.chart('staking-graph-container', {
         credits: {
@@ -115,7 +125,7 @@ export default class StakingChart extends Component<Props> {
         series: [
           {
               name: 'Staking Weight',
-              data: [],//moveAvgOfAcceptedData,
+              data: stakingsWeight,
               type: 'area',
               tooltip:{
                 pointFormatter:function(){
