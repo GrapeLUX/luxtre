@@ -7,8 +7,10 @@ import environment from '../../environment';
 const networkForLocalStorage = String(environment.NETWORK);
 const localStorageKeys = {
   WALLETS: networkForLocalStorage + '-LUX-WALLETS',
+  STAKINGS: networkForLocalStorage + '-LUX-STAKINGS'
 };
 
+export const LUX_STAKE_RECORD_DEEP = 7 * 24 * 3600;
 /**
  * This api layer provides access to the electron local storage
  * for account/wallet properties that are not synced with LUX backend.
@@ -23,6 +25,17 @@ export type LuxWalletData = {
 
 export type LuxWalletsData = {
   wallets: Array<LuxWalletData>,
+};
+
+export type LuxStakingData = {
+  stakingweight: number,
+  netstakingweight: number,
+  difficulty: number,
+  time: number
+};
+
+export type LuxStaingsData = {
+  stakings: Array<LuxStakingData>,
 };
 
 export const getLuxWalletsData = (): Promise<LuxWalletsData> => new Promise((resolve, reject) => {
@@ -94,6 +107,54 @@ export const unsetLuxWalletData = (
 
 export const unsetLuxWalletsData = (): Promise<void> => new Promise((resolve) => {
   localStorage.remove(localStorageKeys.WALLETS, () => {
+    resolve();
+  });
+});
+
+export const getLuxStakingsData = (): Promise<LuxStakingsData> => new Promise((resolve, reject) => {
+  localStorage.get(localStorageKeys.STAKINGS, (error, response) => {
+    if (error) return reject(error);
+    if (!response.stakings) return resolve({ stakings: [] });
+    resolve(response.stakings);
+  });
+});
+
+export const setLuxStakingsData = (
+  stakingsData: Array<LuxStakingData>
+): Promise<void> => new Promise((resolve, reject) => {
+  const stakings = {};
+  stakingsData.forEach(stakingData => {
+    stakings[stakingData.id] = stakingData;
+  });
+  localStorage.set(localStorageKeys.STAKINGS, { stakings }, (error) => {
+    if (error) return reject(error);
+    resolve();
+  });
+});
+
+export const getLuxStakingData = (
+  walletId: string
+): Promise<LuxStakingData> => new Promise(async (resolve) => {
+  const stakingDataSet = await getLuxStakingsData();
+  resolve(stakingDataSet[walletId]);
+});
+
+export const setLuxStakingData = (
+  walletId: string, stakingStatus: LuxStakingData
+): Promise<void> => new Promise(async (resolve, reject) => {
+  
+  var stakingsData = [];
+  const stakingDataSet = await getLuxStakingsData();
+  const result = stakingDataSet[walletId];
+  if(result != null && result.length > 0)
+  {
+    stakingsData = result.filter(stakingData => stakingData.time > Date.now() - LUX_STAKE_RECORD_DEEP * 1000)
+  }
+  
+  stakingsData.push(stakingStatus);
+  set(stakingDataSet, walletId, stakingsData);
+  localStorage.set(localStorageKeys.STAKINGS, { stakings: stakingDataSet }, (error) => {
+    if (error) return reject(error);
     resolve();
   });
 });

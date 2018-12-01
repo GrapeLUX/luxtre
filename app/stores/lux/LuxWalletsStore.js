@@ -1,5 +1,5 @@
 // @flow
-import { observable, action, runInAction } from 'mobx';
+import { observable, computed, action, runInAction } from 'mobx';
 import BigNumber from 'bignumber.js';
 import WalletStore from '../WalletStore';
 import Wallet from '../../domain/Wallet';
@@ -14,6 +14,9 @@ import type {
   GetWalletsResponse, RestoreWalletResponse,
   GetWalletRecoveryPhraseResponse
 } from '../../api/common';
+import {
+  getLuxStakingData
+} from '../../api/lux/luxLocalStorage';
 
 export default class LuxWalletsStore extends WalletStore {
 
@@ -191,4 +194,10 @@ export default class LuxWalletsStore extends WalletStore {
       this.walletExportType = params.walletExportType;
     }
   };
+
+  @computed get getStakingData(): Array<LuxStakingData> {
+    const wallet = this.active;
+    const result = getLuxStakingData(wallet.id);
+    return result ? result : [];
+  }
 }
