@@ -57,10 +57,6 @@ export default class StakingChart extends Component<Props> {
             selected : 1,
             inputEnabled: false,
             buttons : [{
-                type : 'hour',
-                count : 1,
-                text : '1h'
-            },{
                 type : 'day',
                 count : 1,
                 text : '1d'
@@ -72,14 +68,6 @@ export default class StakingChart extends Component<Props> {
                 type : 'Month',
                 count : 1,
                 text : '1m'
-            },{
-                type : 'year',
-                count : 1,
-                text : '1y'
-            },{
-                type : 'all',
-                count : 1,
-                text : 'All'
             }]
         },
         navigator: {

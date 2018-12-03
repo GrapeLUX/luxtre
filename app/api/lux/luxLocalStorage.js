@@ -10,7 +10,8 @@ const localStorageKeys = {
   STAKINGS: networkForLocalStorage + '-LUX-STAKINGS'
 };
 
-export const LUX_STAKE_RECORD_DEEP = 7 * 24 * 3600;
+export const LUX_STAKE_FETCH_INTERVAL = 3600;
+export const LUX_STAKE_RECORD_DEEP =30 * 24 * 3600;
 /**
  * This api layer provides access to the electron local storage
  * for account/wallet properties that are not synced with LUX backend.
@@ -30,8 +31,7 @@ export type LuxWalletsData = {
 export type LuxStakingData = {
   stakingweight: number,
   netstakingweight: number,
-  difficulty: number,
-  time: number
+  difficulty: number
 };
 
 export type LuxStaingsData = {
@@ -146,11 +146,16 @@ export const setLuxStakingData = (
   var stakingsData = [];
   const stakingDataSet = await getLuxStakingsData();
   const result = stakingDataSet[walletId];
+  const currentTime = Date.now();
   if(result != null && result.length > 0)
   {
-    stakingsData = result.filter(stakingData => stakingData.time > Date.now() - LUX_STAKE_RECORD_DEEP * 1000)
+    if(result[result.length - 1].time > currentTime - LUX_STAKE_FETCH_INTERVAL * 1000)
+      return resolve();
+
+    stakingsData = result.filter(stakingData => stakingData.time > currentTime - LUX_STAKE_RECORD_DEEP * 1000)
   }
   
+  stakingStatus.time = currentTime;
   stakingsData.push(stakingStatus);
   set(stakingDataSet, walletId, stakingsData);
   localStorage.set(localStorageKeys.STAKINGS, { stakings: stakingDataSet }, (error) => {
