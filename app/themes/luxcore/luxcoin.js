@@ -64,6 +64,8 @@ export default {
   '--theme-button-primary-text-color-disabled': '#fafbfc',
   '--theme-button-primary-text-color': '#fafbfc',
 
+  '--theme-borderbox-background-color' : '#fafbfc',
+
   '--theme-button-flat-background-color': '#3a5e73',
   '--theme-button-flat-background-color-hover': '#50c2dc',
   '--theme-button-flat-background-color-active': '#40c2dc',
