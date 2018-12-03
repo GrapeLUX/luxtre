@@ -32,7 +32,7 @@
 }
 
 .totalBalance {
-  color: #000000;
+  color: var(--theme-overview-text-color);
 }
 
 .outgoingLux {
@@ -40,7 +40,7 @@
 }
 
 .remainLux {
-  color: var(--theme-recb-text-color);
+  color: var(--theme-recv-text-color);
 }
 
 .totalBalance,
