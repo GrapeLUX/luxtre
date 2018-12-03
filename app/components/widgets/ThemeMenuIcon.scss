@@ -3,11 +3,6 @@
   position: absolute;
   right: 30px;
   text-align: right;
-  &:hover {
-    .info {
-      opacity: 1;
-    }
-  }
   &.mainnet {
     right: 50px;
     .icon {
@@ -49,6 +44,8 @@
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
+
+.icon:hover + .info { opacity: 1; }
 
 .menu {
   margin-top: 10px;
