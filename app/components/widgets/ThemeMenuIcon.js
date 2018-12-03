@@ -22,6 +22,17 @@ type State = {
 
 export default class ThemeMenuIcon extends Component<Props, State> {
 
+  constructor() {
+    super();
+    
+    this.state = {
+      showMenu: false,
+    };
+    
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+
   state = {
     isShowThemeMenu: false
   };
@@ -29,9 +40,19 @@ export default class ThemeMenuIcon extends Component<Props, State> {
   static contextTypes = {
     intl: intlShape.isRequired
   };
+  
+  showMenu(event) {
+    event.preventDefault();
+    
+    this.setState({ showMenu: true }, () => {
+      document.addEventListener('click', this.closeMenu);
+    });
+  }
 
-  onOpenThemeMenu() {
-    this.setState({isShowThemeMenu: !this.state.isShowThemeMenu});
+  closeMenu() {
+    this.setState({ isShowThemeMenu: false }, () => {
+      document.removeEventListener('click', this.closeMenu);
+    });
   }
 
   render() {
