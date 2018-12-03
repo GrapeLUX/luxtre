@@ -16,17 +16,13 @@ type Props = {
   openDialogAction: Function,
 };
 
-type State = {
-  isShowThemeMenu: boolean,
-}
-
-export default class ThemeMenuIcon extends Component<Props, State> {
+export default class ThemeMenuIcon extends Component<Props> {
 
   constructor() {
     super();
     
     this.state = {
-      showMenu: false,
+      isShowThemeMenu: false,
     };
     
     this.showMenu = this.showMenu.bind(this);
@@ -36,27 +32,29 @@ export default class ThemeMenuIcon extends Component<Props, State> {
   state = {
     isShowThemeMenu: false
   };
-
+  
   static contextTypes = {
     intl: intlShape.isRequired
   };
-  
+
   showMenu(event) {
     event.preventDefault();
     
-    this.setState({ showMenu: true }, () => {
+    this.setState({ isShowThemeMenu: true }, () => {
       document.addEventListener('click', this.closeMenu);
     });
   }
 
-  closeMenu() {
-    this.setState({ isShowThemeMenu: false }, () => {
-      document.removeEventListener('click', this.closeMenu);
-    });
+  closeMenu(event) {
+    if (!this.dropdownMenu.contains(event.target)) {
+      this.setState({ isShowThemeMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu);
+      });  
+    }
   }
 
+
   render() {
-    const { openDialogAction } = this.props;
     const { isShowThemeMenu } = this.state;
     const { intl } = this.context;
     const componentClasses = classNames([
@@ -68,7 +66,7 @@ export default class ThemeMenuIcon extends Component<Props, State> {
     ]);
     return (
       <div className={componentClasses}>
-        <button onClick={e => this.setState({ isShowThemeMenu: !isShowThemeMenu })}>
+        <button onClick={this.showMenu}>
           <img className={styles.icon} src={munuIcon} role="presentation" />
           { isShowThemeMenu ? (
             null
@@ -78,12 +76,23 @@ export default class ThemeMenuIcon extends Component<Props, State> {
             </div>
           )}
         </button>
-        <div className={themeMenuClasses}>
-          <div className={styles.menuItem}>default</div>
-          <div className={styles.menuItem}>dark-blue</div>
-          <div className={styles.menuItem}>light-blue</div>
-        </div>
+        { this.state.isShowThemeMenu ? (
+          <div
+            className={styles.menu}
+            ref={(element) => {
+              this.dropdownMenu = element;
+            }}
+          >
+            <div className={styles.menuItem}>default</div>
+            <div className={styles.menuItem}>dark-blue</div>
+            <div className={styles.menuItem}>light-blue</div>
+          </div>
+        ) : (
+          null
+        )}
       </div>
     );
   }
 }
+
+
