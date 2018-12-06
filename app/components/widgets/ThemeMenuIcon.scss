@@ -1,7 +1,8 @@
 .component {
   overflow: visible;
   position: absolute;
-  right: 61px;
+  right: 30px;
+  text-align: right;
   &.mainnet {
     right: 50px;
     .icon {
@@ -12,8 +13,8 @@
 }
 
 .icon {
-  height: 22px;
-  width: 27px;
+  height: 20px;
+  width: 24px;
   cursor: pointer;
 }
 
@@ -45,3 +46,27 @@
 }
 
 .icon:hover + .info { opacity: 1; }
+
+.menu {
+  margin-top: 10px;
+  width: 120px;
+  position: absolute;
+  right: 0;
+  text-align: left;
+  border: var(--theme-dropdown-menu-item-border);
+  background-color: var(--theme-dropdown-menu-item-background-color);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.menuItem {
+  padding: 10px 12px;
+  background-color: var(--theme-dropdown-menu-item-background-color);
+  &:hover {
+    background-color: var(--theme-dropdown-menu-item-background-color-hover);
+  }
+}
+
+.hideMenu {
+  opacity: 0;
+}

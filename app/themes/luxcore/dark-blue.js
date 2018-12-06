@@ -148,6 +148,10 @@ export default {
   '--theme-node-update-deny-button-background-color-active': 'rgba(83, 99, 112, 1)',
   '--theme-node-update-button-text-color': '#fafbfc',
 
+  '--theme-dropdown-menu-item-border': '1px solid #a1a1a1',
+  '--theme-dropdown-menu-item-background-color' : '#fafafa',
+  '--theme-dropdown-menu-item-background-color-hover' : '#b0b0b0',
+
   '--theme-notification-message-background-color': 'rgba(83, 99, 112, 0.8)',
   '--theme-notification-message-text-color': '#fafbfc',
 

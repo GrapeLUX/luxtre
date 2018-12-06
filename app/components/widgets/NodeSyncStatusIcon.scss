@@ -1,12 +1,8 @@
 .component {
   overflow: visible;
   position: absolute;
-  right: 65px;
-  &:hover {
-    .info {
-      opacity: 1;
-    }
-  }
+  right: 95px;
+
   &.mainnet {
     right: 80px;
     .icon {
@@ -47,3 +43,5 @@
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
+
+.icon:hover + .info { opacity: 1; }

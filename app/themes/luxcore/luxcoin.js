@@ -150,6 +150,10 @@ export default {
   '--theme-node-update-deny-button-background-color-active': '#40c2dc',
   '--theme-node-update-button-text-color': '#fafbfc',
 
+  '--theme-dropdown-menu-item-border': '1px solid #7f7f7f',
+  '--theme-dropdown-menu-item-background-color' : '#eaeaea',
+  '--theme-dropdown-menu-item-background-color-hover' : '#b0b0b0',
+
   '--theme-notification-message-background-color': 'rgba(44, 187, 105, 0.8)',
   '--theme-notification-message-text-color': '#fafbfc',
 
