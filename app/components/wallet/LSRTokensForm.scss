@@ -57,7 +57,7 @@
 .inputContainer {
   height:200px;
   font-size: 14px;
-  background-color: #efefef;
+  background-color: var(--theme-lsr-token-input-background-color);
   margin-left: 20px;
   padding: 10px 0px;
 }
@@ -65,7 +65,7 @@
   margin-top: 100px;
   height:200px;
   font-size: 14px;
-  background-color: #efefef;
+  background-color: var(--theme-lsr-token-input-background-color);
   margin-left: 20px;
   padding: 10px 0px;
   text-align: center;
