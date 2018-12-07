@@ -289,6 +289,7 @@ export default {
   '--theme-wallet-password-switch-label-color': '#ffffff',
 
   '--theme-lsr-token-input-background-color': '#020f1c',
+  '--theme-masternode-button-background-color': '#022140',
 
   '--theme-luxgate-statusbar-background-color': '#40c2dc',
   '--theme-luxgate-statusbar-color': '#40c2dc',
