@@ -14,7 +14,6 @@ type Props = {
 @observer
 export default class StakingChart extends Component<Props> {
   
-  _graphLoading = true;
   _isMounted = false;
 
   componentDidMount() {
@@ -23,14 +22,17 @@ export default class StakingChart extends Component<Props> {
     var ctx = this;
     stakingsData.then(function(result){
         var stakingsWeight = new Array();
+        var myStakingsWeight = new Array();
 
 	    result.forEach(function(weight) {
-	        var stakingWeight;
-	        stakingWeight = [weight.time, weight.netstakingweight];
-	        stakingsWeight.push(stakingWeight);
+            var stakingWeight = [weight.time, weight.netstakingweight];
+            var mystakingWeight = [weight.time, parseFloat(weight.stakingweight * 100 / weight.netstakingweight)];
+            stakingsWeight.push(stakingWeight);
+            myStakingsWeight.push(mystakingWeight)
         });
         
-        ctx.renderGraph(stakingsWeight);
+        ctx.renderGraph1(stakingsWeight);
+        ctx.renderGraph2(myStakingsWeight);
     })
   }
 
@@ -38,14 +40,15 @@ export default class StakingChart extends Component<Props> {
     this._isMounted = false;
   }
 
-  renderGraph(stakingsWeight){
-
-    Highcharts.chart('staking-graph-container', {
+  renderGraph1(stakingsWeight){
+    
+    Highcharts.chart('staking-graph-container1', {
         credits: {
             enabled: false
         },
         chart: {
-            zoomType: 'x'
+            zoomType: 'x',
+            height: 300
         },
         exporting: { 
             enabled: false 
@@ -57,10 +60,6 @@ export default class StakingChart extends Component<Props> {
             selected : 1,
             inputEnabled: false,
             buttons : [{
-                type : 'hour',
-                count : 1,
-                text : '1h'
-            },{
                 type : 'day',
                 count : 1,
                 text : '1d'
@@ -72,14 +71,6 @@ export default class StakingChart extends Component<Props> {
                 type : 'Month',
                 count : 1,
                 text : '1m'
-            },{
-                type : 'year',
-                count : 1,
-                text : '1y'
-            },{
-                type : 'all',
-                count : 1,
-                text : 'All'
             }]
         },
         navigator: {
@@ -124,26 +115,117 @@ export default class StakingChart extends Component<Props> {
         },
         series: [
           {
-              name: 'Staking Weight',
+              name: 'Network Staking Weight',
               data: stakingsWeight,
               type: 'area',
               tooltip:{
                 pointFormatter:function(){
                   //var hashrate = ctx.formattedHashrate.call(ctx, this.y);
-                  return 'Staking Weight: <b>' + this.y + '</b><br/>';
+                  return 'Network Staking Weight: <b>' + this.y + '</b><br/>';
                 }
               }
           }]
     });
+ }
+ renderGraph2(myStakingsWeight){
+    Highcharts.chart('staking-graph-container2', {
+        credits: {
+            enabled: false
+        },
+        chart: {
+            zoomType: 'x',
+            height: 300
+        },
+        exporting: { 
+            enabled: false 
+        },
+        title: {
+            text: ''
+        },  
+        rangeSelector: {
+            selected : 1,
+            inputEnabled: false,
+            buttons : [{
+                type : 'day',
+                count : 1,
+                text : '1d'
+            },{
+                type : 'week',
+                count : 1,
+                text : '1w'
+            },{
+                type : 'Month',
+                count : 1,
+                text : '1m'
+            }]
+        },
+        navigator: {
+            enabled: false
+        },
+        scrollbar: {
+            enabled: false
+        },
+        xAxis: {
+            type: 'datetime'
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: null
+            }   
+        },
+        tooltip: {
+            shared: true,
+            positioner: function(labelWidth, labelHeight, point) {
+                var xPos = point.plotX + this.chart.plotLeft + 10;
+                var yPos = point.plotY + this.chart.plotTop;
 
-    this._graphLoading = false;      
+                if (point.plotX + labelWidth > this.chart.chartWidth - this.chart.plotLeft) {
+                    xPos = point.plotX + this.chart.plotLeft - labelWidth - 10;
+                }
+
+                return {
+                    x: xPos,
+                    y: yPos
+                };
+      }
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineWidth: 1,
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        series: [
+          {
+              name: 'My Staking Weight',
+              data: myStakingsWeight,
+              type: 'area',
+              tooltip:{
+                pointFormatter:function(){
+                  //var hashrate = ctx.formattedHashrate.call(ctx, this.y);
+                  return 'My Staking Weight: <b>' + this.y + '%</b><br/>';
+                }
+              }
+          }]
+    });      
   }
 
   render() {
     return (
       <div className={styles.component}>
-        <div className={styles.categoryTitle}> Staking Weight </div>
-        <div className='chart' id='staking-graph-container'></div>
+        <div className={styles.networkweight}>
+            <div className={styles.categoryTitle}> Network Staking Weight </div>
+            <div className='chart' id='staking-graph-container1'></div>
+        </div>
+        <div className={styles.myweight}>
+            <div className={styles.categoryTitle}> My Staking Weight (%) </div>
+            <div className='chart' id='staking-graph-container2'></div>
+        </div>
+        
       </div>
     );
   }

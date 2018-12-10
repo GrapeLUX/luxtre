@@ -183,7 +183,6 @@ export const LUX_API_HOST = 'localhost';
 export const LUX_API_PORT = 9888;
 export const LUX_API_USER = 'rpcuser';
 export let LUX_API_PWD = 'rpcpwd';
-export const LUX_STAKE_FETCH_INTERVAL = 600;
 
 // LUX specific Request / Response params
 
@@ -278,8 +277,6 @@ export type ExportWalletToFileResponse = [];
 
 
 export default class LuxApi {
-
-  _refreshTime = 0;
 
   constructor() {
     if (environment.isTest()) {
@@ -391,17 +388,12 @@ export default class LuxApi {
         stakingStatus.mintablecoins == true &&
         stakingStatus.enoughcoins == 'yes';
 
-      const currentTime = Date.now();
-      if(currentTime > this._refreshTime + LUX_STAKE_FETCH_INTERVAL * 1000)
-      {
-        await setLuxStakingData(id, {
-          stakingweight: stakingStatus.stakeweight.max,
-          netstakingweight: stakingStatus.netstakeweight,
-          difficulty: stakingStatus.difficulty,
-          time: currentTime
-        }); // fetch staking data from local storage
-        this._refreshTime = currentTime;
-      }
+      await setLuxStakingData(id, {
+        stakingweight: stakingStatus.stakeweight.max,
+        netstakingweight: stakingStatus.netstakeweight,
+        difficulty: stakingStatus.difficulty
+      }); // fetch staking data from local storage
+      
 
       let Wallets = [];
       try {
