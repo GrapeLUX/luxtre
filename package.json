@@ -148,6 +148,7 @@
     "react-number-format": "1.1.2",
     "react-polymorph": "0.6.4",
     "react-router": "3.0.3",
+    "react-splitter-layout": "^3.0.1",
     "react-stockcharts": "^0.7.8",
     "react-svg-inline": "2.0.0",
     "react-table": "^6.8.2",
