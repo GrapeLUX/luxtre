@@ -130,10 +130,10 @@ export default {
   '--theme-nav-item-text-gradient-1': '#243d5f',
   '--theme-nav-item-text-gradient-2': '#83a5c1',
 
-  '--theme-nav-sideitem-background-color': '#1c2e47',
+  '--theme-nav-sideitem-background-color': '#f8f9fa',
   '--theme-nav-sideitem-background-color-hover': 'rgba(250, 251, 252, 0.1)',
   '--theme-nav-sideitem-background-color-active': '#fafbfc',
-  '--theme-nav-sideitem-text-color': 'rgba(250,251,252, 0.6)',
+  '--theme-nav-sideitem-text-color': '#312e2e',
   '--theme-nav-sideitem-text-color-active': '#1d2e47',
   '--theme-nav-sideitem-text-gradient-1': '#243d5f',
   '--theme-nav-sideitem-text-gradient-2': '#83a5c1',
@@ -174,9 +174,9 @@ export default {
 
   '--theme-sidebar-background-color': '#345078',
   '--theme-sidebar-category-background-color-hover': '#2e4669',
-  '--theme-sidebar-category-background-color-active': '#233856',
+  '--theme-sidebar-category-background-color-active': '#f8f9fa',
   '--theme-sidebar-category-text-color': '#fafbfc',
-  '--theme-sidebar-menu-background-color': '#233856',
+  '--theme-sidebar-menu-background-color': '#f8f9fa',
   '--theme-sidebar-menu-item-background-color-hover': '#1e304a',
   '--theme-sidebar-menu-item-background-color-active': '#1e304a',
   '--theme-sidebar-menu-item-wallet-name-color': '#fafbfc',
@@ -199,7 +199,7 @@ export default {
   '--theme-test-environment-label-background-color': '#ab1700',
   '--theme-test-environment-label-text-color': '#fafbfc',
 
-  '--theme-topbar-background-color': '#243e62',
+  '--theme-topbar-background-color': '#f8f9fa',
   '--theme-topbar-wallet-name-color': '#fafbfc',
   '--theme-topbar-wallet-info-color': '#fafbfc',
   '--theme-topbar-layout-body-background-color': '#ebeff2',
