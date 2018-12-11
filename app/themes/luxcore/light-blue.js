@@ -291,7 +291,9 @@ export default {
 
   '--theme-wallet-password-switch-label-color': '#5e6066',
 
-  '--theme-lsr-token-input-background-color': '#efefef',
+  '--theme-lsr-token-input-container-background-color': '#efefef',
+  '--theme-lsr-token-control-color': '#111111',
+  '--theme-lsr-token-control-background-color': '#efefef',
   '--theme-masternode-button-background-color': '#2f4a63',
 
   '--theme-luxgate-statusbar-background-color': '#40c2dc',
