@@ -214,10 +214,15 @@
 	    background-color: var(--theme-lsr-token-control-background-color);
       .rt-thead{
         font: bold 14px/30px Georgia, serif;
-        border-bottom: 1px solid #434754;
+        //border-bottom: var(--theme-lsr-token-table-border-style);
       }
       .rt-tbody {
         font-size: 13px;
+      }
+
+      .rt-th, .rt-td {
+        border-bottom: var(--theme-lsr-token-table-border-style);
+        background-color: var(--theme-lsr-token-table-background-color);
       }
     }
     .pagination-bottom {

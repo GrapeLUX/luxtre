@@ -291,6 +291,8 @@ export default {
   '--theme-lsr-token-input-container-background-color': '#020f1c',
   '--theme-lsr-token-control-color': '#efefef',
   '--theme-lsr-token-control-background-color': '#022140',
+  '--theme-lsr-token-table-background-color': '#022140',
+  '--theme-lsr-token-table-border-style': '1px solid #8f8f8f',
   '--theme-masternode-button-background-color': '#022140',
 
   '--theme-luxgate-statusbar-background-color': '#40c2dc',
