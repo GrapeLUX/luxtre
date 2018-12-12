@@ -15,7 +15,8 @@
 
 .borderedBox {
   //background: var(--theme-bordered-box-background-color);
-  //border: var(--theme-bordered-box-border);
+  //border: var(--theme-smartcontract-input-border);
+  //background-color: var(--theme-smartcontract-container-background-color);
   //border-radius: 4px;
   color: var(--theme-main-body-messages-color);
 
@@ -49,6 +50,9 @@
   text-align: center;
   width: 250px;
   margin: 0px 10px;
+  border: var(--theme-smartcontract-input-border) !important;
+  color: var(--theme-smartcontract-input-color);
+  background-color: var(--theme-smartcontract-container-background-color);
 }
 
 
@@ -105,6 +109,9 @@
 .output {
   width:100%; 
   height:300px;
+  border: var(--theme-smartcontract-input-border) !important;
+  color: var(--theme-smartcontract-input-color);
+  background-color: var(--theme-smartcontract-container-background-color);
 }
 
 .bytecode,
@@ -132,7 +139,8 @@
 
 .areaConstructor {
   height: 100px;
-  background-color: #efefef;
+  border: var(--theme-smartcontract-container-border);
+  background-color: var(--theme-smartcontract-container-background-color);
 }
 
 .optionalContainer {

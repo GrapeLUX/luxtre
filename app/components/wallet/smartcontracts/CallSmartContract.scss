@@ -58,7 +58,8 @@
 
 .areaFunction {
   height: 260px;
-  background-color: #efefef;
+  border: var(--theme-smartcontract-container-border);
+  background-color: var(--theme-smartcontract-container-background-color);
   padding: 10px 10px;
 
   :global .SimpleFormField_root > .SimpleFormField_inputWrapper > .SimpleInput_input{
@@ -81,7 +82,9 @@
 	  height: 30px;
 	  font-size: 14px;
     outline: 0;
-    border: var(--theme-bordered-box-border) !important;
+    border: var(--theme-smartcontract-input-border) !important;
+    color: var(--theme-smartcontract-input-color);
+    background-color: var(--theme-smartcontract-container-background-color);
     padding-left: 10px !important;
     padding-right: 2px ;
 	}
@@ -108,7 +111,9 @@
 	  font-size: 14px;
 	  outline: 0;
     padding-left: 10px;
-    border: var(--theme-bordered-box-border) !important;
+    border: var(--theme-smartcontract-input-border) !important;
+    color: var(--theme-smartcontract-input-color);
+    background-color: var(--theme-smartcontract-container-background-color);
 	}
 }
 
