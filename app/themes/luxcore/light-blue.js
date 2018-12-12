@@ -132,7 +132,7 @@ export default {
   '--theme-nav-sideitem-background-color': '#f8f9fa',
   '--theme-nav-sideitem-background-color-hover': '#ebeff2',
   '--theme-nav-sideitem-background-color-active': '#4cc6de',
-  '--theme-nav-sideitem-text-color': '#312e2e',
+  '--theme-nav-sideitem-text-color': '#1e304a',
   '--theme-nav-sideitem-text-color-active': '#1d2e47',
   '--theme-nav-sideitem-text-gradient-1': '#243d5f',
   '--theme-nav-sideitem-text-gradient-2': '#83a5c1',
@@ -184,7 +184,8 @@ export default {
   '--theme-sidebar-menu-add-button-background-color-hover': '#1b2b43',
   '--theme-sidebar-menu-add-button-text-color': '#fafbfc',
   '--theme-sidebar-menu-border-right': '1px solid #c6cdd6',
-  
+  '--theme-sidebar-menu-logo-text-color': '#1e304a',
+
   '--theme-staking-background-color': '#ebeff2',
   '--theme-staking-content-background-color': '#fafbfc',
   '--theme-staking-content-border-color': '#c6cdd6',
