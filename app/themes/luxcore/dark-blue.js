@@ -294,6 +294,10 @@ export default {
   '--theme-lsr-token-table-background-color': '#022140',
   '--theme-lsr-token-table-border-style': '1px solid #8f8f8f',
   '--theme-masternode-button-background-color': '#022140',
+  '--theme-smartcontract-container-background-color': '#022140',
+  '--theme-smartcontract-container-border': '1px solid #8f8f8f',
+  '--theme-smartcontract-input-border': '1px solid #8f8f8f',
+  '--theme-smartcontract-input-color': '#efefef',
 
   '--theme-luxgate-statusbar-background-color': '#40c2dc',
   '--theme-luxgate-statusbar-color': '#40c2dc',

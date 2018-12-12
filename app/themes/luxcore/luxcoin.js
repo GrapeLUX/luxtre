@@ -296,7 +296,11 @@ export default {
   '--theme-lsr-token-table-background-color': '#efefef',
   '--theme-lsr-token-table-border-style': '1px solid #434754',
   '--theme-masternode-button-background-color': '#2f4a63',
-
+  '--theme-smartcontract-container-background-color': '#efefef',
+  '--theme-smartcontract-container-border': 'none',
+  '--theme-smartcontract-input-border': '1px solid #c6cdd6',
+  '--theme-smartcontract-input-color': '#111111',
+  
   '--theme-luxgate-statusbar-background-color': '#40c2dc',
   // '--theme-luxgate-statusbar-color': '#40c2dc',
   '--theme-luxgate-tablecell-color': '#3058a2',
