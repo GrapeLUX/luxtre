@@ -307,4 +307,5 @@ export default {
   '--theme-luxgate-swap-background-color-hover': '#85e3f6',
   '--theme-luxgate-swap-background-color-active': '#40c2dc',
   '--theme-luxgate-tab-color-active': '#32a4bb',
+  '--theme-luxgate-sidebar-color': '#efefef',
 };

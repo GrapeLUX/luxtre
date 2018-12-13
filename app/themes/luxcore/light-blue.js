@@ -299,11 +299,12 @@ export default {
   '--theme-luxgate-checkbox-checked-color': '#0097e0',
   '--theme-luxgate-checkbox-unchecked-color': '#756767',
   '--theme-luxgate-primary-background-color': '#85e3f6',
-  '--theme-luxgate-primary-background-color-hover': '#061532',
-  '--theme-luxgate-assist-background-color': '#061532',
+  '--theme-luxgate-primary-background-color-hover': '#f2f2f2',
+  '--theme-luxgate-assist-background-color': '#f2f2f2',
   '--theme-luxgate-swap-background-color': '#32a4bb',
   '--theme-luxgate-swap-background-color-hover': '#85e3f6',
   '--theme-luxgate-swap-background-color-active': '#40c2dc',
   '--theme-luxgate-tab-color-active': '#32a4bb',
+  '--theme-luxgate-sidebar-color': '#3f3f3f',
   
 };
