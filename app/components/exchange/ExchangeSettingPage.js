@@ -188,7 +188,7 @@ export default class ExchangeSettingPage extends Component<Props, State> {
     return (
       <div className={styles.sendReceivePanel}>
         <li className={styles.divStatusTab}>
-          <MiniBalance color="white">
+          <MiniBalance>
             {Coin1}/{Coin2} : {coinPrice}
           </MiniBalance>
         </li>
@@ -265,7 +265,7 @@ export default class ExchangeSettingPage extends Component<Props, State> {
     return (
       <div className={styles.setting}>
         <div className={styles.card}>
-          <div className={styles.cardTitle}><ModalTitle color="white">COUPLED ASSET SWAP</ModalTitle></div>
+          <div className={styles.cardTitle}><ModalTitle>COUPLED ASSET SWAP</ModalTitle></div>
         </div>
         <div className={styles.component}>
           <Select {...selectProps} value={Coin1} onChange={this.changeCoin1.bind(this)} />
@@ -312,7 +312,7 @@ export default class ExchangeSettingPage extends Component<Props, State> {
         </div>
         <div className={styles.divTotal}>
           <Total fontSize={2}>Total: {' '}</Total>
-          <MiniBalance color="white">
+          <MiniBalance>
             {this.calculateTotal(AmountInput, ValueInput)} {Coin2}{' '}
           </MiniBalance>
         </div>
