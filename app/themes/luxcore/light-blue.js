@@ -201,7 +201,7 @@ export default {
   '--theme-test-environment-label-text-color': '#fafbfc',
 
   '--theme-topbar-background-color': '#f8f9fa',
-  '--theme-topbar-wallet-name-color': '#fafbfc',
+  '--theme-topbar-wallet-name-color': '#333333',
   '--theme-topbar-wallet-info-color': '#fafbfc',
   '--theme-topbar-layout-body-background-color': '#ebeff2',
 
