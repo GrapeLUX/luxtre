@@ -185,7 +185,9 @@ export default {
   '--theme-sidebar-menu-add-button-background-color-active': '#1b2430',
   '--theme-sidebar-menu-add-button-background-color-hover': '#171f29',
   '--theme-sidebar-menu-add-button-text-color': '#ffffff',
-
+  '--theme-sidebar-menu-border-right': '1px solid #c6cdd6',
+  '--theme-sidebar-menu-logo-text-color': '#f2f2f2',
+  
   '--theme-staking-background-color': '#020f1c',
   '--theme-staking-content-background-color': '#022140',
   '--theme-staking-content-border-color': '#022140',
@@ -316,4 +318,5 @@ export default {
   '--theme-luxgate-swap-background-color-hover': '#85e3f6',
   '--theme-luxgate-swap-background-color-active': '#40c2dc',
   '--theme-luxgate-tab-color-active': '#32a4bb',
+  '--theme-luxgate-sidebar-color': '#efefef',
 };

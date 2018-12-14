@@ -8,6 +8,7 @@
   height: 100%;
   background: var(--theme-sidebar-menu-background-color);
   flex-shrink: 0;
+  border-right: var(--theme-sidebar-menu-border-right);
 }
 
 .page {

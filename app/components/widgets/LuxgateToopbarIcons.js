@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import lockedIcon from '../../assets/images/top-bar/wallet-locked.png';
 import loginIcon from '../../assets/images/top-bar/login.png';
 import logoutIcon from '../../assets/images/top-bar/logout.png';
 import settingsIcon from '../../assets/images/top-bar/settings.png';

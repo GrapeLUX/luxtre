@@ -240,6 +240,7 @@
 }
 
 .send {
+  color: #fff;
   float: right;
   > * {
     cursor: pointer;
@@ -247,6 +248,7 @@
 }
 
 .recv {
+  color: #fff;
   margin-left: 10px;
   > * {
     min-width: 70px;
@@ -262,7 +264,7 @@
     height: 48%;
   }
   > div:first-child {
-    margin-bottom: 8px;
+    //margin-bottom: 8px;
   }
 }
 
@@ -278,7 +280,6 @@
 .graph {
   display: inline-block;
   width: 75%;
-  margin: 0px 8px;
   border: var(--theme-bordered-box-border);
 }
 
@@ -303,7 +304,7 @@
 .divStatus,
 .graph,
 .orderTable2 {
-  margin-right: 8px;
+  margin-left: 1px;
 }
 
 // chart
@@ -313,10 +314,11 @@
   background-color: var(--theme-button-primary-text-color);
   border-radius: 4px;
   :global .react-tabs__tab-list {
+    margin: 0px 0px 1px;
     background-color: var(--theme-luxgate-primary-background-color-hover);
   }
   :global .react-tabs__tab {
-    color: white !important;
+    color: var(--theme-luxgate-sidebar-color) !important;
   }
 
   :global .react-tabs__tab--selected {
@@ -357,6 +359,8 @@
   width: 100%;
   height: 140px;
   margin-bottom: 8px;
+  background-color: var(--theme-luxgate-primary-background-color-hover);
+  color: var(--theme-luxgate-sidebar-color);
 }
 
 .statusTable {
@@ -376,7 +380,7 @@
   height: 310px;
   width: 100%;
   background-color: var(--theme-luxgate-primary-background-color-hover);
-  //border: var(--theme-bordered-box-border);
+  color: var(--theme-luxgate-sidebar-color);
   border-bottom: 1px solid #434754;
   border-radius: 4px;
   vertical-align: top;
@@ -407,7 +411,7 @@
 .orderTableCaptionBar {
   width: 100%;
   height: 36px;
-  color: #fff; //var(--theme-bordered-box-text-color);
+  color: var(--theme-luxgate-sidebar-color);
   background-color: var(--theme-luxgate-primary-background-color-hover);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -540,6 +544,7 @@
   max-width: 25%;
   padding: 0 2px;
   background: var(--theme-luxgate-assist-background-color);
+  //border-right: var(--theme-sidebar-menu-border-right);
 }
 
 // 
