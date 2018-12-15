@@ -389,9 +389,9 @@ export default class LuxApi {
         stakingStatus.enoughcoins == 'yes';
 
       await setLuxStakingData(id, {
-        stakingweight: stakingStatus.stakeweight.max,
-        netstakingweight: stakingStatus.netstakeweight,
-        difficulty: stakingStatus.difficulty
+        stakingweight: stakingStatus.stakeweight ? stakingStatus.stakeweight.max : 0,
+        netstakingweight: stakingStatus.netstakeweight ? stakingStatus.netstakeweight: 0,
+        difficulty: stakingStatus.difficulty ? stakingStatus.difficulty : 0
       }); // fetch staking data from local storage
       
 
