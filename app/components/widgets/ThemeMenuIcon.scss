@@ -60,9 +60,11 @@
 }
 
 .menuItem {
+  width: 100%;
   padding: 10px 12px;
   background-color: var(--theme-dropdown-menu-item-background-color);
   &:hover {
+    cursor: pointer;
     background-color: var(--theme-dropdown-menu-item-background-color-hover);
   }
 }
