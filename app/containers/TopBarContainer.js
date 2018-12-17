@@ -19,6 +19,10 @@ export default class TopBarContainer extends Component<Props> {
 
   static defaultProps = { actions: null, stores: null };
 
+  selectTheme = (values: { theme: string }) => {
+    this.props.actions.profile.updateTheme.trigger(values);
+  }
+  
   render() {
     const { actions, stores } = this.props;
     const { sidebar, app, networkStatus, luxgate } = stores;
@@ -32,6 +36,7 @@ export default class TopBarContainer extends Component<Props> {
     const testnetLabel = (
       isLuxApi && !isMainnet ? <WalletTestEnvironmentLabel /> : null
     );
+    const { currentTheme } = this.props.stores.profile;
 
     return (
       <TopBar
@@ -67,7 +72,8 @@ export default class TopBarContainer extends Component<Props> {
         }
         {isShowingLuxtre ?
           <ThemeMenuIcon
-            openDialogAction={actions.dialogs.open.trigger}
+            theme={currentTheme}
+            selectTheme={this.selectTheme}
           />
           :null
         }
