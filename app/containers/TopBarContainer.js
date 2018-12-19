@@ -48,12 +48,14 @@ export default class TopBarContainer extends Component<Props> {
         {isShowingLuxtre && activeWallet && activeWallet.hasPassword == true ?
           <WalletLockStatusIcon
             isLocked={activeWallet.isLocked}
+            currentTheme={currentTheme}
           />
           : null
         }
         {isShowingLuxtre ?
           <WalletStakingStatusIcon
             isStaking={activeWallet.isStaking}
+            currentTheme={currentTheme}
           />
           : null
         }
@@ -61,12 +63,14 @@ export default class TopBarContainer extends Component<Props> {
           <NodeSyncStatusIcon
             networkStatus={networkStatus}
             isMainnet={isMainnet}
+            currentTheme={currentTheme}
           />
           : null
         }
         {isShowingLuxtre ?
           <ConsoleWindowIcon
             openDialogAction={actions.dialogs.open.trigger}
+            currentTheme={currentTheme}
           />
           :null
         }
