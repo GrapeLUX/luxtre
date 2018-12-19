@@ -19,6 +19,10 @@ export default class TopBarContainer extends Component<Props> {
 
   static defaultProps = { actions: null, stores: null };
 
+  selectTheme = (values: { theme: string }) => {
+    this.props.actions.profile.updateTheme.trigger(values);
+  }
+  
   render() {
     const { actions, stores } = this.props;
     const { sidebar, app, networkStatus, luxgate } = stores;
@@ -32,6 +36,7 @@ export default class TopBarContainer extends Component<Props> {
     const testnetLabel = (
       isLuxApi && !isMainnet ? <WalletTestEnvironmentLabel /> : null
     );
+    const { currentTheme } = this.props.stores.profile;
 
     return (
       <TopBar
@@ -43,12 +48,14 @@ export default class TopBarContainer extends Component<Props> {
         {isShowingLuxtre && activeWallet && activeWallet.hasPassword == true ?
           <WalletLockStatusIcon
             isLocked={activeWallet.isLocked}
+            currentTheme={currentTheme}
           />
           : null
         }
         {isShowingLuxtre ?
           <WalletStakingStatusIcon
             isStaking={activeWallet.isStaking}
+            currentTheme={currentTheme}
           />
           : null
         }
@@ -56,18 +63,21 @@ export default class TopBarContainer extends Component<Props> {
           <NodeSyncStatusIcon
             networkStatus={networkStatus}
             isMainnet={isMainnet}
+            currentTheme={currentTheme}
           />
           : null
         }
         {isShowingLuxtre ?
           <ConsoleWindowIcon
             openDialogAction={actions.dialogs.open.trigger}
+            currentTheme={currentTheme}
           />
           :null
         }
         {isShowingLuxtre ?
           <ThemeMenuIcon
-            openDialogAction={actions.dialogs.open.trigger}
+            theme={currentTheme}
+            selectTheme={this.selectTheme}
           />
           :null
         }

@@ -48,6 +48,8 @@ export default class Wallet extends Component<Props> {
     const { actions } = this.props;
     const { showLuxRedemptionSuccessMessage, amountRedeemed } = luxRedemption;
     const { isShowingLuxtre } = sidebar;
+    const { currentTheme } = this.props.stores.profile;
+
     if (!wallets.active) {
       return (
         <MainLayout>
@@ -66,6 +68,7 @@ export default class Wallet extends Component<Props> {
             amount={wallets.active.amount.toFormat(DECIMAL_SPLACES_IN_LUX)}
             isShowingLuxtre={isShowingLuxtre}
             onSwitchLuxgate={actions.sidebar.switchLuxgate.trigger}
+            currentTheme={currentTheme}
           >
             {this.props.children}
           </WalletWithNavigation>

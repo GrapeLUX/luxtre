@@ -5,15 +5,25 @@ import { defineMessages, intlShape } from 'react-intl';
 import styles from './WalletNavigation.scss';
 import WalletNavButton from './WalletNavButton';
 import LuxLogo from '../../Logo/LuxLogo';
-import summaryIcon from '../../../assets/images/wallet-nav/summary-ic.inline.svg';
-import sendIcon from '../../../assets/images/wallet-nav/send-ic.inline.svg';
-import receiveIcon from '../../../assets/images/wallet-nav/receive-ic.inline.svg';
-import transactionsIcon from '../../../assets/images/wallet-nav/transactions-ic.inline.svg';
-import settingsIcon from '../../../assets/images/wallet-nav/wallet-settings-2-ic.inline.svg';
-import utillityIcon from '../../../assets/images/wallet-nav/utility-ic.inline.svg';
-import masternodeIcon from '../../../assets/images/wallet-nav/masternode-ic.inline.svg';
-import lsrtokensIcon from '../../../assets/images/wallet-nav/lsrtokens-ic.inline.svg';
-import smartcontractIcon from '../../../assets/images/wallet-nav/smartcontract-ic.inline.svg';
+import summaryWhiteIcon from '../../../assets/images/wallet-nav/summary-ic.inline.svg';
+import summaryBlackIcon from '../../../assets/images/wallet-nav/summary-ic-black.inline.svg';
+import sendWhiteIcon from '../../../assets/images/wallet-nav/send-ic.inline.svg';
+import sendBlackIcon from '../../../assets/images/wallet-nav/send-ic-black.inline.svg';
+import receiveWhiteIcon from '../../../assets/images/wallet-nav/receive-ic.inline.svg';
+import receiveBlackIcon from '../../../assets/images/wallet-nav/receive-ic-black.inline.svg';
+import transactionsWhiteIcon from '../../../assets/images/wallet-nav/transactions-ic.inline.svg';
+import transactionsBlackIcon from '../../../assets/images/wallet-nav/transactions-ic-black.inline.svg';
+import settingsWhiteIcon from '../../../assets/images/wallet-nav/wallet-settings-ic.inline.svg';
+import settingsBlackIcon from '../../../assets/images/wallet-nav/wallet-settings-ic-black.inline.svg';
+import utillityWhiteIcon from '../../../assets/images/wallet-nav/utility-ic.inline.svg';
+import utillityBlackIcon from '../../../assets/images/wallet-nav/utility-ic-black.inline.svg';
+import masternodeWhiteIcon from '../../../assets/images/wallet-nav/masternode-ic.inline.svg';
+import masternodeBlackIcon from '../../../assets/images/wallet-nav/masternode-ic-black.inline.svg';
+import lsrtokensWhiteIcon from '../../../assets/images/wallet-nav/lsrtokens-ic.inline.svg';
+import lsrtokensBlackIcon from '../../../assets/images/wallet-nav/lsrtokens-ic-black.inline.svg';
+import smartcontractWhiteIcon from '../../../assets/images/wallet-nav/smartcontract-ic.inline.svg';
+import smartcontractBlackIcon from '../../../assets/images/wallet-nav/smartcontract-ic-black.inline.svg';
+import { THEMES } from '../../../themes/index';
 import 'font-awesome/css/font-awesome.min.css'
 
 const messages = defineMessages({
@@ -69,7 +79,8 @@ type Props = {
   onNavItemClick: Function,
   amount: string,
   isShowingLuxtre: boolean,
-  onSwitchLuxgate: Function
+  onSwitchLuxgate: Function,
+  currentTheme: string
 };
 
 @observer
@@ -80,7 +91,7 @@ export default class WalletNavigation extends Component<Props> {
   };
 
   render() {
-    const { isActiveNavItem, onNavItemClick, amount, isShowingLuxtre, onSwitchLuxgate} = this.props;
+    const { isActiveNavItem, onNavItemClick, amount, isShowingLuxtre, onSwitchLuxgate, currentTheme} = this.props;
     const { intl } = this.context;
     const socialIconStyle = {
       fontSize:18, 
@@ -100,7 +111,7 @@ export default class WalletNavigation extends Component<Props> {
           <WalletNavButton
             className="summary"
             label={intl.formatMessage(messages.summary)}
-            icon={summaryIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? summaryBlackIcon : summaryWhiteIcon}
             isActive={isActiveNavItem('summary')}
             onClick={() => onNavItemClick('summary')}
           />
@@ -110,7 +121,7 @@ export default class WalletNavigation extends Component<Props> {
           <WalletNavButton
             className="send"
             label={intl.formatMessage(messages.send)}
-            icon={sendIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? sendBlackIcon : sendWhiteIcon}
             isActive={isActiveNavItem('send')}
             onClick={() => onNavItemClick('send')}
           />
@@ -120,7 +131,7 @@ export default class WalletNavigation extends Component<Props> {
           <WalletNavButton
             className="receive"
             label={intl.formatMessage(messages.receive)}
-            icon={receiveIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? receiveBlackIcon : receiveWhiteIcon}
             isActive={isActiveNavItem('receive')}
             onClick={() => onNavItemClick('receive')}
           />
@@ -129,7 +140,7 @@ export default class WalletNavigation extends Component<Props> {
         <div className={styles.navItem}>
           <WalletNavButton
             label={intl.formatMessage(messages.transactions)}
-            icon={transactionsIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? transactionsBlackIcon : transactionsWhiteIcon}
             isActive={isActiveNavItem('transactions')}
             onClick={() => onNavItemClick('transactions')}
           />
@@ -138,7 +149,7 @@ export default class WalletNavigation extends Component<Props> {
         <div className={styles.navItem}>
           <WalletNavButton
             label={intl.formatMessage(messages.settings)}
-            icon={settingsIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? settingsBlackIcon : settingsWhiteIcon}
             isActive={isActiveNavItem('settings')}
             onClick={() => onNavItemClick('settings')}
           />
@@ -147,7 +158,7 @@ export default class WalletNavigation extends Component<Props> {
         <div className={styles.navItem}>
           <WalletNavButton
             label={intl.formatMessage(messages.utilities)}
-            icon={utillityIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? utillityBlackIcon : utillityWhiteIcon}
             isActive={isActiveNavItem('utilities')}
             onClick={() => onNavItemClick('utilities')}
           />
@@ -156,7 +167,7 @@ export default class WalletNavigation extends Component<Props> {
         <div className={styles.navItem}>
           <WalletNavButton
             label={intl.formatMessage(messages.masternodes)}
-            icon={masternodeIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? masternodeBlackIcon : masternodeWhiteIcon}
             isActive={isActiveNavItem('masternodes')}
             onClick={() => onNavItemClick('masternodes')}
           />
@@ -164,7 +175,7 @@ export default class WalletNavigation extends Component<Props> {
         <div className={styles.navItem}>
           <WalletNavButton
             label={intl.formatMessage(messages.lsrtokens)}
-            icon={lsrtokensIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? lsrtokensBlackIcon : lsrtokensWhiteIcon}
             isActive={isActiveNavItem('lsrtokens')}
             onClick={() => onNavItemClick('lsrtokens')}
           />
@@ -172,7 +183,7 @@ export default class WalletNavigation extends Component<Props> {
         <div className={styles.navItem}>
           <WalletNavButton
             label={intl.formatMessage(messages.smartcontracts)}
-            icon={smartcontractIcon}
+            icon={currentTheme==THEMES.LIGHT_BLUE ? smartcontractBlackIcon : smartcontractWhiteIcon}
             isActive={isActiveNavItem('smartcontracts')}
             onClick={() => onNavItemClick('smartcontracts')}
           />

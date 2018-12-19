@@ -3,6 +3,7 @@ import { defineMessages, intlShape } from 'react-intl';
 import classNames from 'classnames';
 import munuIcon from '../../assets/images/top-bar/theme-dark.png';
 import styles from './ThemeMenuIcon.scss';
+import { THEMES } from '../../themes/index';
 
 const messages = defineMessages({
   themeSettingIcon: {
@@ -13,7 +14,8 @@ const messages = defineMessages({
 });
 
 type Props = {
-  openDialogAction: Function,
+  theme: string,
+  selectTheme: Function,
 };
 
 export default class ThemeMenuIcon extends Component<Props> {
@@ -53,8 +55,13 @@ export default class ThemeMenuIcon extends Component<Props> {
     }
   }
 
+  clickMenu(event, index) {
+    console.log(event);
+    console.log(index);
+  }
 
   render() {
+    const { theme, selectTheme } = this.props;
     const { isShowThemeMenu } = this.state;
     const { intl } = this.context;
     const componentClasses = classNames([
@@ -83,9 +90,24 @@ export default class ThemeMenuIcon extends Component<Props> {
               this.dropdownMenu = element;
             }}
           >
-            <div className={styles.menuItem}>default</div>
-            <div className={styles.menuItem}>dark-blue</div>
-            <div className={styles.menuItem}>light-blue</div>
+            <button 
+              className={styles.menuItem} 
+              onClick={selectTheme.bind(this, { theme: THEMES.LUXCOIN })}
+            >
+              Default
+            </button>
+            <button 
+              className={styles.menuItem} 
+              onClick={selectTheme.bind(this, { theme: THEMES.DARK_BLUE })}
+            >
+              Dark-Blue
+            </button>
+            <button 
+              className={styles.menuItem} 
+              onClick={selectTheme.bind(this, { theme: THEMES.LIGHT_BLUE })}
+            >
+              Light
+            </button>
           </div>
         ) : (
           null
