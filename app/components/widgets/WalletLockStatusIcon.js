@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import lockedIcon from '../../assets/images/top-bar/wallet-locked.png';
+import lockedBlackIcon from '../../assets/images/top-bar/wallet-locked.png';
+import lockedWhiteIcon from '../../assets/images/top-bar/wallet-locked-white.png';
 import styles from './WalletLockStatusIcon.scss';
+import { THEMES } from '../../themes/index';
 
 const messages = defineMessages({
   walletLocked: {
@@ -19,6 +21,7 @@ const messages = defineMessages({
 
 type Props = {
   isLocked: boolean,
+  currentTheme: string
 };
 
 export default class WalletLockStatusIcon extends Component<Props> {
@@ -29,14 +32,18 @@ export default class WalletLockStatusIcon extends Component<Props> {
 
   render() {
     const { intl } = this.context;
-    const { isLocked } = this.props;
+    const { isLocked, currentTheme } = this.props;
     const componentClasses = classNames([
       styles.component,
       isLocked ? styles.locked : styles.unlocked,
     ]);
     return (
       <div className={componentClasses}>
-        <img className={styles.icon} src={lockedIcon} role="presentation" />
+        <img 
+          className={styles.icon} 
+          src={currentTheme == THEMES.DARK_BLUE ? lockedWhiteIcon : lockedBlackIcon} 
+          role="presentation" 
+        />
         <div className={styles.info}>
           {isLocked ? intl.formatMessage(messages.walletLocked) : intl.formatMessage(messages.walletUnlocked)}
         </div>

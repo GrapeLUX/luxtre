@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import munuIcon from '../../assets/images/top-bar/theme-dark.png';
+import menuBlackIcon from '../../assets/images/top-bar/theme-dark.png';
+import menuWhiteIcon from '../../assets/images/top-bar/theme-white.png';
 import styles from './ThemeMenuIcon.scss';
 import { THEMES } from '../../themes/index';
 
@@ -74,7 +75,11 @@ export default class ThemeMenuIcon extends Component<Props> {
     return (
       <div className={componentClasses}>
         <button onClick={this.showMenu}>
-          <img className={styles.icon} src={munuIcon} role="presentation" />
+          <img 
+            className={styles.icon} 
+            src={theme == THEMES.DARK_BLUE ? menuWhiteIcon : menuBlackIcon} 
+            role="presentation" 
+          />
           { isShowThemeMenu ? (
             null
           ) : (

@@ -185,7 +185,7 @@ export default {
   '--theme-sidebar-menu-add-button-background-color-active': '#1b2430',
   '--theme-sidebar-menu-add-button-background-color-hover': '#171f29',
   '--theme-sidebar-menu-add-button-text-color': '#ffffff',
-  '--theme-sidebar-menu-border-right': '1px solid #c6cdd6',
+  '--theme-sidebar-menu-border-right': '1px solid #0a345f',
   '--theme-sidebar-menu-logo-text-color': '#f2f2f2',
   
   '--theme-staking-background-color': '#020f1c',
