@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import stakingIcon from '../../assets/images/top-bar/wallet-staking-bright.png';
+import stakingBrightIcon from '../../assets/images/top-bar/wallet-staking-bright.png';
+import stakingWhiteIcon from '../../assets/images/top-bar/wallet-staking.png';
 import styles from './WalletStakingStatusIcon.scss';
+import { THEMES } from '../../themes/index';
 
 const messages = defineMessages({
   walletStakingActive: {
@@ -19,6 +21,7 @@ const messages = defineMessages({
 
 type Props = {
   isStaking: boolean,
+  currentTheme: string
 };
 
 export default class WalletStakingStatusIcon extends Component<Props> {
@@ -29,14 +32,18 @@ export default class WalletStakingStatusIcon extends Component<Props> {
 
   render() {
     const { intl } = this.context;
-    const { isStaking } = this.props;
+    const { isStaking, currentTheme } = this.props;
     const componentClasses = classNames([
       styles.component,
       isStaking ? styles.active : styles.inactive,
     ]);
     return (
       <div className={componentClasses}>
-        <img className={styles.icon} src={stakingIcon} role="presentation" />
+        <img 
+          className={styles.icon} 
+          src={currentTheme ==  THEMES.DARK_BLUE ? stakingWhiteIcon : stakingBrightIcon} 
+          role="presentation" 
+        />
         <div className={styles.info}>
           {isStaking ? intl.formatMessage(messages.walletStakingActive) : intl.formatMessage(messages.walletStakingInactive)}
         </div>
