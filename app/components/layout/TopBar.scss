@@ -11,6 +11,12 @@
   font-family: var(--font-semibold);
 }
 
+.logo {
+  background: #022140 url("../../assets/images/header-logo-wallet.svg") no-repeat center !important;
+  background-size: 240px !important;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
 .topBar1 {
   align-items: center;
   background: var(--theme-topbar-background-color);

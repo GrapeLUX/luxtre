@@ -51,9 +51,7 @@ export default class TopBar extends Component<Props> {
 
     const topBarStyles = classNames([
       styles.topBar,
-      isShowingLuxtre == undefined || isShowingLuxtre == true
-        ? styles.withoutExchange
-        : styles.withExchange
+      isShowingLuxtre == undefined ? styles.logo : null
     ]);
 
     const switchToggleIcon = (
@@ -76,11 +74,13 @@ export default class TopBar extends Component<Props> {
         {/*<button className={styles.leftIcon} onClick={onSwitchLuxgate}>
           {switchToggleIcon}
         </button>*/}
-        <div className={styles.pageTitle}>
-          {pageNameList[page]}
-        </div>
+        {isShowingLuxtre != undefined ? (
+	        <div className={styles.pageTitle}>
+	          {pageNameList[page]}
+	        </div>
+	      ) : (null)}
         {this.props.children}
-        {isDialogOpen(ConsoleWindowDialog) ? (
+        { isShowingLuxtre != undefined && isDialogOpen(ConsoleWindowDialog) ? (
           <ConsoleWindowContainer/>
         ) : null}
       </header>
