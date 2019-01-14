@@ -4,7 +4,7 @@ rem
 rem   installer dev mode:  set SKIP_TO_FRONTEND/SKIP_TO_INSTALLER
 set MIN_LUXCOIN_BYTES=50000000
 set LIBRESSL_VERSION=2.5.3
-set DEFAULT_LUXD_VERSION=1.0.0
+set DEFAULT_LUXD_VERSION=5.3.0
 set LUXTRE_VERSION_DEFAULT=master-build
 
 set LUXTRE_VERSION=%1
@@ -14,7 +14,7 @@ set LUXD_VERSION=%2
 @if [%LUXD_VERSION%]==[]   (@echo WARNING: LUXD_VERSION [argument #2] was not provided, defaulting to %DEFAULT_LUXD_VERSION%
     set LUXD_VERSION=%DEFAULT_LUXD_VERSION%);
 
-set LUXD_URL=https://github.com/LUX-Core/luxtre/releases/download/v%LUXD_VERSION%/luxd-wins.zip
+set LUXD_URL=https://github.com/LUX-Core/lux/releases/download/v%LUXD_VERSION%/lux-qt-win.zip
 set LIBRESSL_URL=https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-%LIBRESSL_VERSION%-windows.zip
 
 @echo Building luxtre version:  %LUXTRE_VERSION%
