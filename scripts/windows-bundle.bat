@@ -14,13 +14,13 @@ rem   ex2. windows-bundle.bat develop
 rem   ex2. windows-bundle.bat develop 2.0.0 true
 
 @set DEFAULT_LUXTRE_BRANCH=master
-@set DEFAULT_LUXD_VERSION=5.3.0
+@set LASTEST_LUXD_VERSION=5.3.0
 
 set LUXTRE_BRANCH=%1
 @if [%LUXTRE_BRANCH%]==[] (set LUXTRE_BRANCH=%DEFAULT_LUXTRE_BRANCH%)
 
 set LUXD_VERSION=%2
-@if [%LUXD_VERSION%]==[] (set LUXD_VERSION=%DEFAULT_LUXD_VERSION%)
+@if [%LUXD_VERSION%]==[] (set LUXD_VERSION=%LASTEST_LUXD_VERSION%)
 
 set INSTALL_UTILS=%3
 @if [%INSTALL_UTILS%]==[] (@echo WARNING: missing to install visual studio 2015 and python 2.7
