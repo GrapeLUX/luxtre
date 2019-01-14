@@ -80,7 +80,7 @@ export default class TopBar extends Component<Props> {
 	        </div>
 	      ) : (null)}
         {this.props.children}
-        { isShowingLuxtre != undefined && isDialogOpen(ConsoleWindowDialog) ? (
+        { isShowingLuxtre && isDialogOpen && isDialogOpen(ConsoleWindowDialog) ? (
           <ConsoleWindowContainer/>
         ) : null}
       </header>
