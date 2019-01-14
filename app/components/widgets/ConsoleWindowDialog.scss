@@ -62,7 +62,8 @@
 .consoleElement {
   padding: 20px 30px;
   margin: 20px 0px;
-  background: white;
+  background: var(--theme-console-element-color);
+  border: var(--theme-console-element-border);
 }
 
 .commandTitle {

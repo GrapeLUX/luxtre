@@ -209,6 +209,9 @@ export default {
   '--theme-topbar-wallet-info-color': '#fafbfc',
   '--theme-topbar-layout-body-background-color': '#ebeff2',
 
+  '--theme-console-element-color': '#fff',
+  '--theme-console-element-border': 'none',
+
   '--theme-transactions-list-background-color': '#fafbfc',
   '--theme-transactions-list-border-color': '#c6cdd6',
   '--theme-transactions-list-group-date-color': '#050b2d',
