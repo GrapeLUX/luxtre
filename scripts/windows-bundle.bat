@@ -14,7 +14,7 @@ rem   ex2. windows-bundle.bat develop
 rem   ex2. windows-bundle.bat develop 2.0.0 true
 
 @set DEFAULT_LUXTRE_BRANCH=master
-@set DEFAULT_LUXD_VERSION=2.0.0
+@set DEFAULT_LUXD_VERSION=5.3.0
 
 set LUXTRE_BRANCH=%1
 @if [%LUXTRE_BRANCH%]==[] (set LUXTRE_BRANCH=%DEFAULT_LUXTRE_BRANCH%)
