@@ -47,7 +47,7 @@ export default class Sidebar extends Component<Props> {
     } = this.props;
     let subMenu = null;
 
-    const walletsCategory = find(categories, { name: 'WALLETS' }).route;
+    /*const walletsCategory = find(categories, { name: 'WALLETS' }).route;
     if (menus && activeSidebarCategory === walletsCategory) {
       subMenu = (
         <SidebarWalletsMenu
@@ -62,11 +62,12 @@ export default class Sidebar extends Component<Props> {
           visible={isShowingLuxtre}
         />
       );
-    }
+    }*/
 
     const sidebarStyles = classNames([
       styles.component,
-      !isShowingLuxtre || subMenu == null ? styles.minimized : null
+      styles.minimized
+      //!isShowingLuxtre || subMenu == null ? styles.minimized : null
     ]);
 
     return (
@@ -85,7 +86,6 @@ export default class Sidebar extends Component<Props> {
             );
           })}
         </div>
-        {subMenu}
       </div>
     );
   }
