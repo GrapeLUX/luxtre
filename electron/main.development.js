@@ -187,10 +187,10 @@ app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 1190,
-    height: 768
+    height: 800
   });
 
-  mainWindow.setMinimumSize(900, 600);
+  mainWindow.setMinimumSize(1190, 768);
 
   // Initialize our ipc api methods that can be called by the render processes
   ipcApi({ mainWindow });
