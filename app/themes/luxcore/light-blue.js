@@ -175,7 +175,7 @@ export default {
   '--theme-settings-menu-item-left-border-color-active': '#445b7c',
   '--theme-settings-theme-select-title-color': '#5e6066',
 
-  '--theme-sidebar-background-color': '#345078',
+  '--theme-sidebar-background-color': '#ebdcdc',
   '--theme-sidebar-category-background-color-hover': '#2e4669',
   '--theme-sidebar-category-background-color-active': '#f8f9fa',
   '--theme-sidebar-category-text-color': '#fafbfc',
