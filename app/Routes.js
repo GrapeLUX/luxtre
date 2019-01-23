@@ -39,6 +39,9 @@ const UtilityPage = resolver('containers/wallet/UtilityPage');
 const UtilityPosCalcPage = resolver('containers/wallet/UtilityPosCalcPage');
 const UtilityStakingChartPage = resolver('containers/wallet/UtilityStakingChartPage');
 
+const LuxgatePage = resolver('containers/luxgate/LuxgatePage');
+const BTCWallet = resolver('containers/wallet/btc/BTCWallet');
+
 export const Routes = (
   <div>
     <Route path={ROUTES.ROOT} component={LoadingPage} />
@@ -71,7 +74,9 @@ export const Routes = (
         <Route path={ROUTES.WALLETS.SMARTCONTRACTS.SOLCOMPILER} component={SolidityCompilerPage}/>
       </Route>
     </Route>
-    
+    <Route path={ROUTES.LUXGATE} component={LuxgatePage} />
+    <Route path={ROUTES.BTCWALLET.ROOT} component={BTCWallet}>
+    </Route>
     <Route path="/settings" component={Settings}>
       <IndexRedirect to="general" />
       <Route path="general" component={GeneralSettingsPage} />

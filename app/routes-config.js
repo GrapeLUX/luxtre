@@ -40,7 +40,10 @@ export const ROUTES = {
       SOLCOMPILER: '/wallets/:id/smartcontracts/solcompiler',
     }
   },
-  
+  BTCWALLET: {
+    ROOT: '/btcwallet',
+  },
+  LUXGATE: '/luxgate',
   SETTINGS: {
     ROOT: '/settings',
     GENERAL: '/settings/general',
