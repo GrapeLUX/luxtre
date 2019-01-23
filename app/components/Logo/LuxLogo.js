@@ -10,13 +10,15 @@ import LogoButton from './LogoButton';
 type Props = {
    amount: string,
    isShowingLuxtre: boolean,
-   onSwitchLuxgate: Function
+   onSwitchLuxgate: Function,
+   logoIcon: any,
+   logo: string
 }
 
 export default class LuxLogo extends Component<Props> {
 
   render() {
-    const {amount, isShowingLuxtre, onSwitchLuxgate} = this.props;
+    const {amount, isShowingLuxtre, onSwitchLuxgate, logoIcon, logo} = this.props;
     const bgClasses = classnames([
       styles.background,
       styles.normalIcon
@@ -24,7 +26,7 @@ export default class LuxLogo extends Component<Props> {
     
     return (
       <div className={styles.container}>
-        { isShowingLuxtre ? (
+        {/* isShowingLuxtre ? (
           <LogoButton
             firstLogoIcon={luxicon}
             secondLogoIcon={luxgateicon}
@@ -40,9 +42,9 @@ export default class LuxLogo extends Component<Props> {
             secondButtonText={"LUXTRE"}
             onSwitchLuxgate={onSwitchLuxgate}
             /> 
-        )}
-        {/*<div><SvgInline svg={logoIcon} className={styles.icon} /> </div>
-        <div><span className={styles.lux_name}> {logo} </span></div>*/}
+        )*/}
+        <SvgInline svg={logoIcon} className={styles.icon} />
+        <div><span className={styles.lux_name}> {logo} </span></div>
       </div>
     );
   }
