@@ -46,6 +46,7 @@ import type { LGPrice } from '../../domain/LGPriceArray';
 import type { LGOrdersData } from '../../domain/LGOrders';
 import type { InjectedContainerProps } from '../../types/injectedPropsType';
 import LuxLogo from '../Logo/LuxLogo';
+import luxgateicon from '../../assets/images/luxgate-logo.inline.svg';
 
 type Props = {
   coinPrice: number,
@@ -489,6 +490,8 @@ export default class ExchangeSettingPage extends Component<Props, State> {
             <LuxLogo 
               isShowingLuxtre = {false}
               onSwitchLuxgate = {onSwitchLuxgate}
+              logoIcon = {luxgateicon}
+              logo = {'LUXGATE'}
             />
             {this.sendReceivePanel()}
             {this.swapPanel()}

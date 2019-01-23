@@ -5,6 +5,7 @@ import { defineMessages, intlShape } from 'react-intl';
 import styles from './WalletNavigation.scss';
 import WalletNavButton from './WalletNavButton';
 import LuxLogo from '../../Logo/LuxLogo';
+import luxicon from '../../../assets/images/lux-symbol.inline.svg';
 import summaryWhiteIcon from '../../../assets/images/wallet-nav/summary-ic.inline.svg';
 import summaryBlackIcon from '../../../assets/images/wallet-nav/summary-ic-black.inline.svg';
 import sendWhiteIcon from '../../../assets/images/wallet-nav/send-ic.inline.svg';
@@ -105,6 +106,8 @@ export default class WalletNavigation extends Component<Props> {
              amount={amount}
              isShowingLuxtre = {isShowingLuxtre}
              onSwitchLuxgate = {onSwitchLuxgate}
+             logoIcon = {luxicon}
+             logo = {'LUXTRE'}
  	        />
         </div>
         <div className={styles.navItem}>
