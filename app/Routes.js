@@ -41,6 +41,10 @@ const UtilityStakingChartPage = resolver('containers/wallet/UtilityStakingChartP
 
 const LuxgatePage = resolver('containers/luxgate/LuxgatePage');
 const BTCWallet = resolver('containers/wallet/btc/BTCWallet');
+const BTCWalletSummaryPage = resolver('containers/wallet/btc/BTCWalletSummaryPage');
+const BTCWalletSendPage = resolver('containers/wallet/btc/BTCWalletSendPage');
+const BTCWalletReceivePage = resolver('containers/wallet/btc/BTCWalletReceivePage');
+const BTCWalletTransactionsPage = resolver('containers/wallet/btc/BTCWalletTransactionsPage');
 
 export const Routes = (
   <div>
@@ -76,6 +80,10 @@ export const Routes = (
     </Route>
     <Route path={ROUTES.LUXGATE} component={LuxgatePage} />
     <Route path={ROUTES.BTCWALLET.ROOT} component={BTCWallet}>
+      <Route path={ROUTES.BTCWALLET.SUMMARY} component={BTCWalletSummaryPage} />
+      <Route path={ROUTES.BTCWALLET.TRANSACTIONS} component={BTCWalletTransactionsPage} />
+      <Route path={ROUTES.BTCWALLET.SEND} component={BTCWalletSendPage} />
+      <Route path={ROUTES.BTCWALLET.RECEIVE} component={BTCWalletReceivePage} />
     </Route>
     <Route path="/settings" component={Settings}>
       <IndexRedirect to="general" />

@@ -42,6 +42,11 @@ export const ROUTES = {
   },
   BTCWALLET: {
     ROOT: '/btcwallet',
+    SUMMARY: '/btcwallet/summary',
+    TRANSACTIONS: '/btcwallet/transactions',
+    SEND: '/btcwallet/send',
+    RECEIVE: '/btcwallet/receive',
+    //SETTINGS: '/btcwallet/settings',
   },
   LUXGATE: '/luxgate',
   SETTINGS: {
