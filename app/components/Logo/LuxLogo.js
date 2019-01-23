@@ -44,7 +44,7 @@ export default class LuxLogo extends Component<Props> {
             /> 
         )*/}
         <SvgInline svg={logoIcon} className={styles.icon} />
-        <div><span className={styles.lux_name}> {logo} </span></div>
+        <div><span className={styles.logo_name}> {logo} </span></div>
       </div>
     );
   }
