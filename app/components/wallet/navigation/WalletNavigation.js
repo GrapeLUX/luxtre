@@ -107,7 +107,7 @@ export default class WalletNavigation extends Component<Props> {
              isShowingLuxtre = {isShowingLuxtre}
              onSwitchLuxgate = {onSwitchLuxgate}
              logoIcon = {luxicon}
-             logo = {'LUXTRE'}
+             logo = {'LUXCOIN'}
  	        />
         </div>
         <div className={styles.navItem}>

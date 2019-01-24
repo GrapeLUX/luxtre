@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import MainLayout from '../../MainLayout';
 import TopBarContainer from '../../TopBarContainer';
-import WalletWithNavigation from '../../../components/wallet/layouts/WalletWithNavigation';
-import ExchangePage from '../../../components/exchange/ExchangePage';
+import BTCWalletWithNavigation from '../../../components/wallet/btc/layouts/BTCWalletWithNavigation';
 import LoadingSpinner from '../../../components/widgets/LoadingSpinner';
-import LuxRedemptionSuccessOverlay from '../../../components/wallet/lux-redemption/LuxRedemptionSuccessOverlay';
 import { buildRoute } from '../../../utils/routing';
 import { ROUTES } from '../../../routes-config';
 import type { InjectedContainerProps } from '../../../types/injectedPropsType';
@@ -60,48 +58,17 @@ export default class BTCWallet extends Component<Props> {
 
     return (
       <MainLayout>
-        {isShowingLuxtre ? (
-          <WalletWithNavigation
-            isActiveScreen={this.isActiveScreen}
-            topbar={<TopBarContainer />}
-            onWalletNavItemClick={this.handleWalletNavItemClick}
-            amount={wallets.active.amount.toFormat(DECIMAL_SPLACES_IN_LUX)}
-            isShowingLuxtre={isShowingLuxtre}
-            onSwitchLuxgate={actions.sidebar.switchLuxgate.trigger}
-            currentTheme={currentTheme}
-          >
-            {this.props.children}
-          </WalletWithNavigation>
-        ) : (
-          <ExchangePage
-            coinPrice={coinPrice}
-            ordersData={ordersData}
-            lgPriceArrayList={lgPriceArrayList}
-            coinInfoList={coinInfoList}
-            logbuff={logbuff}
-            openDialogAction={actions.dialogs.open.trigger}
-            isDialogOpen={uiDialogs.isOpen}
-            onSwitchLuxgate={actions.sidebar.switchLuxgate.trigger}
-            onChangeCoin={(coin: string, coin_num: number) => {
-              const coinData = {
-                coin,
-                coin_num
-              };
-              actions.luxgate.coinInfo.getCoinInfo.trigger(coinData);
-            }}
-            onSwapCoin={(buy_coin: string, sell_coin: string, amount: number, value: number) => {
-              const swapData = {
-                buy_coin,
-                sell_coin,
-                amount,
-                value
-              };
-              actions.luxgate.coinInfo.swapCoin.trigger(swapData);
-            }}
-          >
-            {/* code Exchange UI here */}
-          </ExchangePage>
-        )}
+        <BTCWalletWithNavigation
+          isActiveScreen={this.isActiveScreen}
+          topbar={<TopBarContainer />}
+          onWalletNavItemClick={this.handleWalletNavItemClick}
+          amount={wallets.active.amount.toFormat(DECIMAL_SPLACES_IN_LUX)}
+          isShowingLuxtre={isShowingLuxtre}
+          onSwitchLuxgate={actions.sidebar.switchLuxgate.trigger}
+          currentTheme={currentTheme}
+        >
+          {this.props.children}
+        </BTCWalletWithNavigation>
       </MainLayout>
     );
   }
