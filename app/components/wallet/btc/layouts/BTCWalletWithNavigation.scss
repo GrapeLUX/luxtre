@@ -1,0 +1,32 @@
+.component {
+  height: 100%;
+  display: flex;
+}
+
+.navigation {
+  width: 250px;
+  height: 100%;
+  background: var(--theme-sidebar-menu-background-color);
+  flex-shrink: 0;
+  border-right: var(--theme-sidebar-menu-border-right);
+}
+
+.page {
+  width: 100%;
+  //overflow: auto;
+  //margin-top: 2%;
+  //padding-left:2%;
+  //padding-right:2%;
+}
+
+.topbar {
+  width: 100%;
+  height: 64px;
+  flex-shrink: 0;
+  // Show elements that overflow the topbar above the content area
+  z-index: 1;
+}
+
+.content {
+  width: 100%;
+}
