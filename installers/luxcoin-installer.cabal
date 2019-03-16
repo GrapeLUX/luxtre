@@ -5,7 +5,7 @@ description:         Please see README.md
 license:             MIT
 author:              Serokell
 maintainer:          Serokell <hi@serokell.io>
-copyright:           2016 216K
+copyright:           2016 LUXCORE
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
